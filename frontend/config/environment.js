@@ -1,4 +1,11 @@
+var config = require('../../config')
+
 'use strict';
+
+const myApiKey = config.apiKey;
+const myAuthDomain = config.authDomain;
+const myDatabaseURL = config.databaseURL;
+const myStorageBucket = config.storageBucket;
 
 module.exports = function(environment) {
   let ENV = {
@@ -6,6 +13,13 @@ module.exports = function(environment) {
     environment,
     rootURL: '/',
     locationType: 'auto',
+    firebase: {
+      apiKey: myApiKey,
+      authDomain: myAuthDomain,
+      databaseURL: myDatabaseURL,
+      storageBucket: myStorageBucket,
+    },
+    torii: { sessionServiceName: 'session' },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
