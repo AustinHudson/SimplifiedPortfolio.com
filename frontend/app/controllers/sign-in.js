@@ -9,9 +9,9 @@ export default Controller.extend({
             email: this.get('email') || '',
             password: this.get('password') || '',
           }).then(() => {
-            alert("Success!")
             controller.set('email', null);
             controller.set('password', null);
+            controller.transitionToRoute('dashboard');
           }, (error) => {
             console.log(error);
           });

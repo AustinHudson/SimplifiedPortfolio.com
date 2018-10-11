@@ -8,9 +8,9 @@ export default Controller.extend({
         const auth = this.get('firebaseApp').auth();
         let controller = this;
         auth.createUserWithEmailAndPassword(this.get('email'), this.get('password')).then((userResponse) => {
-            alert("Success!");
             controller.set('email', null);
-            controller.set('password', null)
+            controller.set('password', null);
+            controller.transitionToRoute('sign-in');
 
             //Create user model instance
 
