@@ -1,15 +1,24 @@
 @import "ember-bootstrap/bootstrap";
+@import "basics/colors";
+@import "page-templates/sign-up-in";
+@import "page-templates/index";
 
-body {
-    background-image: url("/assets/images/footer_lodyas.png");
-    
-    $main-color: blue;
-  
-    h1 {
-      color: $main-color;
+#main-nav{
+    border-bottom: 2px solid $mainFont;
+    background-color: #0B0C10;
+
+     .navbar-brand {
+        color: $brightGreen;
+        font-size: 0.95em;
+        border: 1px solid $mainFont;
+        padding: 5px;
+        font-family: 'Poiret One';
+        
     }
 
-   
-  
-  }
-
+    .sign-out-btn{
+        color: $brightGreen;
+        background-color: transparent;
+        font-size: .75em;
+    }
+}

@@ -1,11 +1,13 @@
 <div class='page-header'>
-    <h1>You must be signed in to use this app</h1>
+    <h1>Welcome to the Finance App</h1>
 </div>
-<div class='list-group'>
-    {{#link-to 'sign-up' class='list-group-item'}}
+<div class='list-group align-items-center'>
+    <div class="sibling-fade">
+    {{#link-to 'sign-up' class='list-group-item list-group-item-action rounded-0'}}
         Sign Up
     {{/link-to}}
-     {{#link-to 'sign-in' class='list-group-item'}}
+     {{#link-to 'sign-in' class='list-group-item list-group-item-action rounded-0'}}
         Sign In
     {{/link-to}}
+    </div>
 </div>

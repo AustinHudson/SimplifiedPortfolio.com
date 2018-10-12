@@ -20,6 +20,13 @@ module.exports = function(environment) {
       storageBucket: myStorageBucket,
     },
     torii: { sessionServiceName: 'session' },
+    googleFonts: [
+      'Comforta:cursive',
+      'Economica:sans-serif',
+      'Teko:sans-serif',
+      'Slabo 27px:serif',
+      'Poiret One:cursive',
+    ],
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
