@@ -1,0 +1,15 @@
+@import "ember-bootstrap/bootstrap";
+
+body {
+    background-image: url("/assets/images/footer_lodyas.png");
+    
+    $main-color: blue;
+  
+    h1 {
+      color: $main-color;
+    }
+
+   
+  
+  }
+
