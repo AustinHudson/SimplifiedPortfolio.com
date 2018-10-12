@@ -1,0 +1,66 @@
+body {
+    background-image: url("/assets/images/footer_lodyas.png");
+    
+    h1 {
+      text-align: center;
+      padding-bottom: 10px;
+      font-family: 'Slabo 27px';
+      color: $darkerGreen;
+    }
+
+    .sign-up-in-form {
+        color: $mainFont;
+        width: 40%;
+        margin: 0 auto;
+      
+        .form-group .form-control:focus {
+          border-color: $brightGreen;
+          box-shadow: 0 0 5px $brightGreen;
+        }
+
+        .button-holder {
+          text-align: center;
+          padding-top: 25px;
+        }
+
+        .btn {
+          box-sizing: border-box;
+          appearance: none;
+          background-color: transparent;
+          border-radius: 0.6em;
+          cursor: pointer;
+          display: flex;
+          align-self: center;
+          font-size: 1rem;
+          line-height: 1;
+          margin: auto;
+          padding: .7em;
+          text-decoration: none;
+          // text-align: center;
+
+
+        
+          &:hover,
+          &:focus {
+            color: #fff;
+            outline: 0;
+          }
+        }
+
+          .sign-in-out-btn{
+            border-color: $darkerGreen;
+            background-color: transparent;
+            color: #fff;
+            box-shadow: 0 0 40px 40px $darkerGreen inset, 0 0 0 0 $darkerGreen;
+            transition: all 150ms ease-in-out;
+            
+            &:hover {
+              box-shadow: 0 0 10px 0 $brightGreen inset, 0 0 10px 4px $brightGreen;
+            }
+          }
+      
+    }
+  }
+
+
+

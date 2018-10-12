@@ -2,26 +2,28 @@
     <h1>Sign In</h1>
 </div>
 
-<form>
+<form class="sign-up-in-form">
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
     {{input type="email" class="form-control" value=email placeholder="Enter email"}}
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Password</label>
-    {{input type='password' class='form-control' value=password placeholder='password'}}
+    {{input type='password' class='form-control' value=password placeholder='Password'}}
   </div>
-</form>
-
 {{#if session.isWorking}}
-    <button class='btn btn-default' disabled='disabled'>
+<div class="button-holder">
+    <button class='btn sign-in-out-btn' disabled='disabled'>
         {{fa-icon 'spinner' spin=true}} Signing in...
     </button>
+    </div>
 {{else}}
+    <div class="button-holder">
     <button
-        class='btn btn-primary'
+        class='btn sign-in-out-btn'
         {{action 'signIn' 'password'}}
-    >
-        {{fa-icon 'sign-in'}} Sign In
+    > Sign In
     </button>
+    </div>
 {{/if}}
+</form>
