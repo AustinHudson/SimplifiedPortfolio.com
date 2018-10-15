@@ -1,0 +1,9 @@
+<h1>Users</h1>
+{{#each model as |user|}}
+    <p>{{user.id}}</p>
+    {{#each user.followed_stocks as |stock|}}
+    <ul>{{stock}}</ul>
+    {{/each}}
+{{/each}}
+
+{{outlet}}
