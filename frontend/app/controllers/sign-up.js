@@ -10,13 +10,24 @@ export default Controller.extend({
         auth.createUserWithEmailAndPassword(this.get('email'), this.get('password')).then((userResponse) => {
             controller.set('email', null);
             controller.set('password', null);
+
+            console.log(userResponse);
+            let newUser = this.store.createRecord('user', {
+                id: userResponse.uid,
+                name: 'Testing name',
+                followed_stocks: ['aapl', 'msft', 'van']
+            });
+            console.log(newUser);
+            newUser.save();
+
             controller.transitionToRoute('sign-in');
 
             //Create user model instance
 
+
         }).catch(
-            (error) => {
-                alert(error);
+            (e) => {
+                alert(e.error);
                 controller.set('email', null);
                 controller.set('password', null);
             }
