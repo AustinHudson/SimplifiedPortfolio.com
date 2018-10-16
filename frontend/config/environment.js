@@ -21,9 +21,7 @@ module.exports = function(environment) {
     },
     torii: { sessionServiceName: 'session' },
     googleFonts: [
-      'Comforta:cursive',
-      'Economica:sans-serif',
-      'Teko:sans-serif',
+      'Montserrat: sans-serif',
       'Slabo 27px:serif',
       'Poiret One:cursive',
     ],

@@ -1,8 +1,4 @@
-
-
-<nav class="navbar" id="main-nav">
-  <a class="navbar-brand" href="/dashboard">Finance App</a>
-
+<div class="top-sign-out">
 {{#if session.isAuthenticated}}
     <button
         class='btn btn-default navbar-btn sign-out-btn'
@@ -10,9 +6,9 @@
         {{fa-icon 'sign-out'}} Sign Out
     </button>
 {{/if}}
-</nav>
-
-
-<div class='container'>
-    {{outlet}}
 </div>
+
+
+
+
+    {{outlet}}

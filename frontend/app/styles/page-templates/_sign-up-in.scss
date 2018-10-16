@@ -1,16 +1,35 @@
 body {
     background-image: url("/assets/images/footer_lodyas.png");
+    color: $mainFont;
     
+   
+
     h1 {
       text-align: center;
       padding-bottom: 10px;
-      font-family: 'Slabo 27px';
-      color: $darkerGreen;
+      font-family: 'Montserrat';
+      color: $brightGreen;
+    }
+
+    .form-div{
+      
+      border: 3px solid white;
+      width: 750px;
+      background-color: rgba(31, 40, 51, 0.4);
+      margin-top: 135px;
+      padding-bottom: 35px;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 15px 50px;
+
+     
+      
+      
     }
 
     .sign-up-in-form {
         color: $mainFont;
-        width: 40%;
+        width: 50%;
         margin: 0 auto;
       
         .form-group .form-control:focus {

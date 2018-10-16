@@ -1,12 +1,27 @@
 
-<div class='page-header'>
-    <h1>Welcome, you are signed in!</h1>
+<div class="wrapper">
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>Finance App</h3>
+        </div>
+
+        <ul class="list-unstyled components">
+            
+            <li class="first-nav-link">
+                <a href="#">Home</a>
+            </li>
+            
+            <li>
+                <a href="#">Portfolio</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+        </ul>
+    </nav>
+
 </div>
-<div class='panel panel-default'>
-    <div class='panel-heading'>{{session.currentUser.email}}</div>
-    <div class='panel-body'>
-       
-    </div>
-</div>
+
 
 {{outlet}}

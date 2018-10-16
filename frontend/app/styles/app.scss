@@ -2,23 +2,24 @@
 @import "basics/colors";
 @import "page-templates/sign-up-in";
 @import "page-templates/index";
+@import "page-templates/dashboard";
 
 #main-nav{
     border-bottom: 2px solid $mainFont;
-    background-color: #0B0C10;
+    background-color: rgba(11, 12, 16, 0.4);
+    height: 100px;
 
      .navbar-brand {
         color: $brightGreen;
-        font-size: 0.95em;
+        font-size: 2.25em;
         border: 1px solid $mainFont;
         padding: 5px;
         font-family: 'Poiret One';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
         
     }
 
-    .sign-out-btn{
-        color: $brightGreen;
-        background-color: transparent;
-        font-size: .75em;
-    }
+    
 }
