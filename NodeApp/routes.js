@@ -9,7 +9,6 @@ module.exports = function(app) {
     app.get('/api/stories', function(req, res) {
         request('https://api.iextrading.com/1.0/stock/market/news/last/10', { json: true }, function (error, response, body) {
              console.log('body:', body); 
-            
              res.jsonp(body);
            }) 
         })
