@@ -22,6 +22,10 @@
     </nav>
 
 </div>
-
+<div>
+{{#each model as |story|}}
+<h1>{{story.headline}}</h1>
+{{/each}}
+</div>
 
 {{outlet}}
