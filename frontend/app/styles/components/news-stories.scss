@@ -1,0 +1,52 @@
+h5 .btn {
+    white-space: normal;
+    color: white;
+    text-decoration: none;
+}
+
+h5 .btn-link:hover {
+    color: $darkerGreen;
+    text-decoration: none;
+}
+
+h5 .btn-link:focus {
+    color: $brightGreen;
+    text-decoration: none;
+}
+
+.card-header {
+    background-color: #181818;
+}
+
+.card-header:hover {
+    background-color: #484848;
+}
+
+.news-stories {
+    width: 50%;
+    margin-left: 275px;
+    margin-top: 10px;
+
+    h2 {
+        padding-bottom: 5px;
+        border-bottom: 2px solid $brightGreen;
+    }
+}
+
+.card-body {
+    color: $darkerGreen;
+    background-color: rgba(152,152,152, 0.1);
+}
+
+.card {
+    background-color: transparent;
+}
+
+.read-more-link {
+    color: $mainFont;
+}
+
+.read-more-link:hover {
+    color: white;
+}
+

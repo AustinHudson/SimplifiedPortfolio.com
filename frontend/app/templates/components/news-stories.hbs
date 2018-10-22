@@ -1,0 +1,7 @@
+
+{{#bs-accordion as |acc|}}
+        {{#acc.item value="1" title=story.headline}}    
+        <p>{{story.summary}}</p>
+        <a href={{story.url}} target="_blank" class="read-more-link">Read full story</a>
+        {{/acc.item}}
+{{/bs-accordion}}
