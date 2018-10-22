@@ -20,6 +20,10 @@ h5 .btn-link:focus {
 
 .card-header:hover {
     background-color: #484848;
+    color: $darkerGreen !important;
+    h5 .btn {
+        color: $darkerGreen;
+    }
 }
 
 .news-stories {

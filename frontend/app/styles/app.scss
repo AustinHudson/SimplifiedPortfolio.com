@@ -2,8 +2,10 @@
 @import "basics/colors";
 @import "page-templates/sign-up-in";
 @import "page-templates/index";
-@import "page-templates/dashboard";
 @import "components/news-stories.scss";
+@import "components/stock-ticker.scss";
+@import "page-templates/dashboard/home.scss";
+@import "components/side-bar.scss";
 
 #main-nav{
     border-bottom: 2px solid $mainFont;
@@ -18,9 +20,6 @@
         font-family: 'Poiret One';
         position: absolute;
         left: 50%;
-        transform: translateX(-50%);
-        
+        transform: translateX(-50%);   
     }
-
-    
 }

@@ -11,7 +11,7 @@ export default Controller.extend({
           }).then(() => {
             controller.set('email', null);
             controller.set('password', null);
-            controller.transitionToRoute('dashboard');
+            controller.transitionToRoute('dashboard.home');
           }, (error) => {
             console.log(error);
           });

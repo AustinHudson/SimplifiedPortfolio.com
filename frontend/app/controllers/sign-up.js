@@ -22,8 +22,6 @@ export default Controller.extend({
 
             controller.transitionToRoute('sign-in');
 
-            //Create user model instance
-
 
         }).catch(
             (e) => {
@@ -32,17 +30,6 @@ export default Controller.extend({
                 controller.set('password', null);
             }
         );
-        // auth.createUserWithEmailAndPassword({
-        //   email: this.get('email') || '',
-        //   password: this.get('password') || '',
-        // }, (error, data) => {
-        //   if (error) {
-        //     console.log(error);
-        //   } else {
-        //     controller.set('email', null);
-        //     controller.set('password', null);
-        //   }
-        // });
       }
     }
 });

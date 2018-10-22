@@ -1,0 +1,32 @@
+
+<div class="wrapper">
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            {{#link-to "dashboard.home"}}<h3>Finance App</h3>{{/link-to}}
+        </div>
+
+        <ul class="list-unstyled components">
+            
+            <li class="first-nav-link">
+                {{#link-to "dashboard.home"}}Home{{/link-to}}
+            </li>
+            
+            <li>
+                <a href="#">Portfolio</a>
+            </li>
+             <li>
+                {{#link-to "dashboard.news"}}News{{/link-to}}
+            </li>
+            <li>
+                <a href="#">Research</a>
+            </li>
+            <li>
+                <span onclick={{action 'signOut'}}>
+                    <a href="#">Sign Out</a>
+                </span>
+            </li>
+        </ul>
+    </nav>
+
+</div>
