@@ -1,6 +1,13 @@
-<form class="sign-up-in-form">
+<div class="quick-search-component">
+  <h2 class="quick-search-title">Quick Stock Lookup</h2>
+<form class="form-inline quick-search-form">
     <div class="form-group">
-      <label for="stockSymbol">Quick Stock Lookup</label>
-      {{input type="text" class="form-control" value=stockSymbol placeholder="Enter Stock Symbol"}}
+      {{input type="text" class="form-control quick-search-input" value=stockSymbol placeholder="Enter Stock Symbol"}}
+       <button
+        class='btn quick-search-btn'
+        {{action 'submit' 'stockSymbol'}}
+    > Search
+    </button>
     </div>
   </form>
+  </div>

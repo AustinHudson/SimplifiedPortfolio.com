@@ -12,6 +12,14 @@ module.exports = function(app) {
              res.jsonp(body);
            }) 
         })
+    
+    app.get('/api/basicInfo/', function(req, res) {
+        console.log(req.query);
+        request('https://api.iextrading.com/1.0/stock/' + req.query.symbol + '/quote', { json: true }, function (error, response, body) {
+             console.log('body:', body); 
+             res.jsonp(body);
+           }) 
+    })
 
     app.get('*', function(req, res) {
         res.sendfile('./public/index.html'); // load our public/index.html file
