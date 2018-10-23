@@ -3,10 +3,12 @@ import $ from 'jquery';
 
 export default Route.extend({
     model() {        
-        return $.ajax({
+        const response = $.ajax({
             url: 'http://localhost:3000/api/stories',
             types: 'GET',
             dataType: 'jsonp'
-        }) 
+        }); 
+        console.log(response);
+        return response;
     } 
 });

@@ -1,3 +1,11 @@
 
     {{stock-ticker}}
 
+    
+  {{quick-search submit='onSubmitForm'}}
+    
+  {{#if model.symbol}}  
+  {{simple-stock-view stock=model}}
+  {{else}}
+  <h1>Please Enter a valid symbol</h1>
+  {{/if}}
