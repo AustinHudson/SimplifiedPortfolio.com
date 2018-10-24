@@ -1,3 +1,4 @@
+
 .wrapper {
     display: flex;
     width: 100%;
@@ -12,4 +13,26 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
+}
+
+.dashboard-home-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    
+    
+}
+
+.side-nav-mock {
+   flex-basis: 10%;
+    height: 100%;
+}
+
+
+.gainers-component, .losers-component {
+    flex-basis: 25%;
+    padding: 25px;
+    background-color: $dashboardBlack;
+    border-radius: 0.75rem;
 }

@@ -1,11 +1,12 @@
 
 #sidebar {
+    flex: 0 0 auto;
     width: 250px;
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
-    background: $grayBlack;
+    background: rgba(31, 40, 51, 0.5);
     color: #fff;
     transition: all 0.3s;
     border-right: 2px solid $mainFont;
