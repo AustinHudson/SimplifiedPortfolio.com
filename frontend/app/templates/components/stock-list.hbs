@@ -1,0 +1,32 @@
+{{#bs-accordion as |acc|}}
+        {{#acc.item value="1" title=stock.companyName}}    
+        <div class="panel-info">
+            <div class="panel-item">
+                <div class='panel-info-title'>
+                    Symbol:
+                </div> 
+                <div>
+                    {{stock.symbol}}
+                </div>
+            </div>
+            <div class="panel-item">
+                <div class='panel-info-title'>
+                    Current Price:
+                </div> 
+                <div>
+                    {{stock.latestPrice}}
+                </div> 
+            </div>
+            <div class="panel-item">
+                <div class='panel-info-title'>
+                    Change: 
+                </div> 
+                <div>
+                    {{is-positive (format-percentage stock.changePercent)}}
+                </div>  
+            </div>
+
+        </div>
+        
+        {{/acc.item}}
+{{/bs-accordion}}

@@ -1,13 +1,10 @@
 .quick-search-component {
     display: flex;
     flex-direction: column;
-
     background-color: $dashboardBlack; 
-    width: 20%;
-    margin-left: 275px;
-    padding: 25px 25px 25px 25px;
+    padding: 25px;
     border-radius: .75rem .75rem 0px 0px;
-    text-align: center;
+   
 }
 
 .search-form-container {
@@ -39,7 +36,7 @@
     color: $mainFont;
 }
 
-.quick-search-title {
+.component-title {
     border-bottom: 2px solid $brightGreen;
     margin-bottom: 25px;
     padding-bottom: 10px;

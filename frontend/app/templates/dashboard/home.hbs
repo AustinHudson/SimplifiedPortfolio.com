@@ -1,12 +1,43 @@
 
 {{stock-ticker}}
     <h1 class="display-date">{{moment-format current-date 'dddd, MMMM Do YYYY'}}</h1>
-{{quick-search submit='onSubmitForm'}}
+
+
+<div class="dashboard-home-container">
+
+    <div class='side-nav-mock'>
+
+    </div>
+
+    <div class="dashboard-home-item">
+        {{quick-search submit='onSubmitForm'}}
     
-{{#if model.symbol}}  
-    {{simple-stock-view stock=model}}
+{{#if model.basicInfo.symbol}}  
+    {{simple-stock-view stock=model.basicInfo}}
 {{else}}
     <div class="simple-stock-view-component">
         <h6>Please Enter a Valid Symbol</h6>
     </div>
 {{/if}}
+    </div>
+
+
+<div class="dashboard-home-item losers-component">
+        <h2 class="component-title">Biggest Gainers</h2>
+    {{#each model.gainersInfo as |stock|}}
+        {{stock-list stock=stock}}
+    {{/each}}
+    </div>
+
+    <div class="dashboard-home-item gainers-component">
+        <h2 class="component-title">Biggest Losers</h2>
+    {{#each model.losersInfo as |stock|}}
+        {{stock-list stock=stock}}
+    {{/each}}
+    </div>
+
+    
+</div>
+
+
+
