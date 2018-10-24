@@ -1,4 +1,37 @@
 <div class="simple-stock-view-component">
-    <h1>{{stock.change}}</h1>
-    <h1>Testing</h1>
+    <h5>{{stock.companyName}}</h5>
+<div class="current-price-container">
+    <div class="current-price-item">
+        {{format-dollar stock.latestPrice}}
+    </div> 
+    <div class="current-price-item">
+        {{is-positive (format-dollar stock.change)}}
+    </div> 
+    <div class="current-price-item">
+        {{is-positive (format-percentage stock.changePercent)}}
+    </div>  
+</div>
+<div class="previous-close-container">
+    <div class="previous-close-text">Previous Close: </div><div class="previous-close-price">{{format-dollar stock.previousClose}}</div>
+</div>
+<div class="price-range-container">
+    <div class="range-container">
+        <div class="range-item">
+            <p class="range-text">Day Range</p>
+        </div>
+        <div class="range-item">
+            {{format-dollar stock.low}} - {{format-dollar stock.high}}
+        </div>
+    </div>
+    <div class="range-container">
+        <div class="range-item">
+            <p class="range-text">52 Week Range</p>
+        </div>
+        <div class="range-item">
+            {{format-dollar stock.week52Low}} - {{format-dollar stock.week52High}}
+        </div>
+    </div>
+</div>
+    
+    
 </div>

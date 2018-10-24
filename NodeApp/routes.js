@@ -15,7 +15,7 @@ module.exports = function(app) {
     
     app.get('/api/basicInfo/', function(req, res) {
         console.log(req.query);
-        request('https://api.iextrading.com/1.0/stock/' + req.query.symbol + '/quote', { json: true }, function (error, response, body) {
+        request('https://api.iextrading.com/1.0/stock/' + req.query.symbol + '/quote?displayPercent=true', { json: true }, function (error, response, body) {
              console.log('body:', body); 
              res.jsonp(body);
            }) 

@@ -1,0 +1,78 @@
+.simple-stock-view-component {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(11, 12, 16, 0.8); 
+    width: 20%;
+    margin-left: 275px;
+    padding: 25px;
+    border-radius: 0px 0px .75rem .75rem;
+    text-align: center;
+    border-top: 2px solid $grayBlack;
+
+    h5 {
+        margin-left: 35px;
+        margin-right: 35px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid $brightGreen;
+    }
+}
+
+.current-price-container {
+    padding-top: 15px;
+    display: flex;
+    flex-flow: wrap;
+    // align-content: space-between;
+}
+
+.current-price-item {
+    flex: 1;
+    // width: 33%; 
+}
+
+.is-positive {
+    color: #009933;
+}
+
+.is-negative {
+    color: #e60000;
+}
+
+.previous-close-container {
+    display: flex;
+    margin-top: 10px;
+    flex-flow: wrap;
+    justify-content: space-around;
+    
+}
+
+.previous-close-text {
+    flex: 1;
+    color: $darkerGreen;
+    margin-left: 3%;
+}
+.previous-close-price {
+    flex: 1;    
+}
+
+.price-range-container {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-around;
+    margin-top: 25px;
+}
+
+.range-container {
+  
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.range-item {
+    align-self: center;
+}
+.range-text {
+    color: $darkerGreen;
+    border-bottom: 1px solid $mainFont;
+    padding-bottom: 3px;
+}

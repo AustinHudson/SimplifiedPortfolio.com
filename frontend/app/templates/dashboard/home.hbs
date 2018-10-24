@@ -5,7 +5,9 @@
   {{quick-search submit='onSubmitForm'}}
     
   {{#if model.symbol}}  
-  {{simple-stock-view stock=model}}
+    {{simple-stock-view stock=model}}
   {{else}}
-  <h1>Please Enter a valid symbol</h1>
+    <div class="simple-stock-view-component">
+        <h6>Please Enter a Valid Symbol</h6>
+    </div>
   {{/if}}
