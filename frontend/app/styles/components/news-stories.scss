@@ -2,6 +2,7 @@ h5 .btn {
     white-space: normal;
     color: white;
     text-decoration: none;
+    text-align: left;
 }
 
 h5 .btn-link:hover {
@@ -26,10 +27,11 @@ h5 .btn-link:focus {
 }
 
 .news-stories {
-    width: 50%;
-    margin-left: 275px;
-    margin-top: 10px;
-
+    width: 40%;
+    margin: 10px 0 200px 275px;
+    border-radius: .75rem;
+    padding: 25px;
+    background-color: $dashboardBlack;
     h2 {
         padding-bottom: 5px;
         border-bottom: 2px solid $brightGreen;

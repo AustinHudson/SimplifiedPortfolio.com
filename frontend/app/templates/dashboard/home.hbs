@@ -1,13 +1,12 @@
 
-    {{stock-ticker}}
-
+{{stock-ticker}}
+    <h1 class="display-date">{{moment-format current-date 'dddd, MMMM Do YYYY'}}</h1>
+{{quick-search submit='onSubmitForm'}}
     
-  {{quick-search submit='onSubmitForm'}}
-    
-  {{#if model.symbol}}  
+{{#if model.symbol}}  
     {{simple-stock-view stock=model}}
-  {{else}}
+{{else}}
     <div class="simple-stock-view-component">
         <h6>Please Enter a Valid Symbol</h6>
     </div>
-  {{/if}}
+{{/if}}
