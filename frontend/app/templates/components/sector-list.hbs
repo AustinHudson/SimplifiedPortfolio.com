@@ -1,1 +1,10 @@
-{{yield}}
+<li class="list-group-item">
+    <div class="sector-list-item">
+        <div class="sector-list-title">
+            {{sector.name}}
+        </div>
+        <div class="sector-list-change">
+            {{is-positive (format-sector sector.performance)}}
+        </div>
+    </div>
+</li>

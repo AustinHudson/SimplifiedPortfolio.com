@@ -1,26 +1,34 @@
 {{!-- 
 {{stock-ticker}} --}}
 
-    <h1 class="display-date">{{moment-format current-date 'dddd, MMMM Do YYYY'}}</h1>
+<h1 class="display-date">{{moment-format current-date 'dddd, MMMM Do YYYY'}}</h1>
 
 
 <div class="dashboard-home-container">
-
-    <div class='side-nav-mock'>
-
-    </div>
-
-    <div class="dashboard-home-item">
-        {{quick-search submit='onSubmitForm'}}
+    <div class='side-nav-mock'></div>
+        <div class="dashboard-home-item">
+            <div class="home-left-col">
+                <div class="home-left-col-item">
+                    {{quick-search submit='onSubmitForm'}}
     
-{{#if model.basicInfo.symbol}}  
-    {{simple-stock-view stock=model.basicInfo}}
-{{else}}
-    <div class="simple-stock-view-component">
-        <h6>Please Enter a Valid Symbol</h6>
-    </div>
-{{/if}}
-    </div>
+                    {{#if model.basicInfo.symbol}}  
+                        {{simple-stock-view stock=model.basicInfo}}
+                    {{else}}
+                        <div class="simple-stock-view-component">
+                            <h6>Please Enter a Valid Symbol</h6>
+                        </div>
+                    {{/if}}
+                </div>
+                <div class="home-left-col-item-sector">
+                     <h2 class="component-title">Sector Performance</h2>
+                     <ul class="list-group list-group-flush">
+                        {{#each model.sectorsInfo as |sector|}}
+                            {{sector-list sector=sector}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div> 
+        </div>
 
 
 <div class="dashboard-home-item losers-component">
