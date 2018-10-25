@@ -26,9 +26,14 @@ h5 .btn-link:focus {
     }
 }
 
+.news-stories-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
 .news-stories {
-    width: 40%;
-    margin: 10px 0 200px 275px;
+    flex-basis: 35%;
     border-radius: .75rem;
     padding: 25px;
     background-color: $dashboardBlack;
