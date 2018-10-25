@@ -4,10 +4,10 @@ import { htmlSafe } from '@ember/string';
 export function isPositive(params/*, hash*/) {
 
   if (parseFloat(params) > 0){
-    return htmlSafe(`<p class='is-positive'> ${params} </p>`);
+    return htmlSafe(`<div class='is-positive'> ${params} </div>`);
   }
   else {
-    return htmlSafe(`<p class='is-negative'> ${params} </p>`);
+    return htmlSafe(`<div class='is-negative'> ${params} </div>`);
   }
 }
 

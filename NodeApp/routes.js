@@ -34,6 +34,13 @@ module.exports = function(app) {
           }) 
     })
 
+    app.get('/api/sectors', function(req, res){
+        request('https://api.iextrading.com/1.0/stock/market/sector-performance?displayPercent=true', { json: true }, function (error, response, body) {
+            console.log('body:', body); 
+            res.jsonp(body);
+          }) 
+    })
+
     app.get('*', function(req, res) {
         res.sendfile('./public/index.html'); // load our public/index.html file
     });
