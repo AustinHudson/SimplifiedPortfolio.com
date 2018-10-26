@@ -1,1 +1,39 @@
-{{outlet}}
+
+
+<div class="research-search">
+    <div class="research-date">
+        <h1 class="display-date">{{moment-format current-date 'dddd, MMMM Do YYYY'}}</h1>
+    </div>
+    <div class="research-form-item">
+        <form class="form-inline research-search-form">  
+             <div class="form-group">
+                 {{input type="text" class="form-control quick-search-input" value=stockSymbol placeholder="Enter Stock Symbol"}}
+            <button
+                class='btn quick-search-btn'
+                {{action 'researchSymbol' stockSymbol}}
+            >Search
+            </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="research-tabs">
+  {{#bs-nav type="tabs" as |nav|}}
+    <div>
+         {{#nav.item}}{{#nav.link-to "dashboard.research.profile"}}Company Profile{{/nav.link-to}}{{/nav.item}}
+    </div>
+    <div>
+        {{#nav.item}}{{#nav.link-to "dashboard.research.chart"}}Chart{{/nav.link-to}}{{/nav.item}}
+    </div>
+    <div>
+        {{#nav.item}}{{#nav.link-to "dashboard.research.financials"}}Financials{{/nav.link-to}}{{/nav.item}}
+    </div>
+    <div>
+        {{#nav.item}}{{#nav.link-to "dashboard.research.technicalIndicators"}}Technical Indicators{{/nav.link-to}}{{/nav.item}}
+    </div>
+  {{/bs-nav}}
+  <div class="dashboard-research-content">
+      {{outlet}}
+  </div>
+</div>

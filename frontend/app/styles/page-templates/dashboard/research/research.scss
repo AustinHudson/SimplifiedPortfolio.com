@@ -1,0 +1,53 @@
+.research-search {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.research-search-form {
+    padding: 25px;
+}
+.research-date {
+    flex: 4;
+    h1 {
+        width: 100%;
+    }
+}
+.research-form-item {
+    flex: 1;
+    margin-right: 5%;
+}
+
+.research-tabs {
+    margin-left: 275px;
+    margin-right: 5%;
+}
+
+.nav-tabs {
+    
+    border-bottom: 1px solid $darkerGreen;
+    
+}
+
+.nav-link {
+    background-color: transparent;
+   
+}
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    color: white;
+    background-color: $dashboardBlack;
+    border: 1px solid $darkerGreen;
+    border-bottom: 1px solid $dashboardBlack;
+}
+
+.nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
+    border: 1px solid $darkerGreen;
+    border-bottom: 1px solid $dashboardBlack;
+}
+
+.dashboard-research-content {
+    background-color: $dashboardBlack;
+    border: 1px solid $darkerGreen;
+    border-top: transparent;
+    height: 700px;
+}

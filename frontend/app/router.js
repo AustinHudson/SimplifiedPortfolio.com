@@ -15,11 +15,11 @@ Router.map(function() {
   this.authenticatedRoute('dashboard', function() {
     this.route('home');
     this.route('news');
-  });
-
-  this.route('dashboard', function() {
     this.route('research', function() {
       this.route('profile');
+      this.route('chart');
+      this.route('financials');
+      this.route('technicalIndicators');
     });
   });
 });

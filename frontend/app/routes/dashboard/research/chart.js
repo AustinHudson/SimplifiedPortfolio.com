@@ -2,7 +2,7 @@ import Route from '@ember/routing/route';
 
 export default Route.extend({
 
-    model() {
+    model(){
         let { symbol } = this.paramsFor('dashboard.research');
         console.log(symbol);
     }
