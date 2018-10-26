@@ -16,6 +16,12 @@ Router.map(function() {
     this.route('home');
     this.route('news');
   });
+
+  this.route('dashboard', function() {
+    this.route('research', function() {
+      this.route('profile');
+    });
+  });
 });
 
 export default Router;

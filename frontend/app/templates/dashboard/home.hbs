@@ -2,15 +2,12 @@
 {{stock-ticker}} --}}
 
 <h1 class="display-date">{{moment-format current-date 'dddd, MMMM Do YYYY'}}</h1>
-
-
 <div class="dashboard-home-container">
     <div class='side-nav-mock'></div>
         <div class="dashboard-home-item">
             <div class="home-left-col">
                 <div class="home-left-col-item">
                     {{quick-search submit='onSubmitForm'}}
-    
                     {{#if model.basicInfo.symbol}}  
                         {{simple-stock-view stock=model.basicInfo}}
                     {{else}}
@@ -29,23 +26,18 @@
                 </div>
             </div> 
         </div>
-
-
-<div class="dashboard-home-item losers-component">
-        <h2 class="component-title">Biggest Gainers</h2>
-    {{#each model.gainersInfo as |stock|}}
-        {{stock-list stock=stock}}
-    {{/each}}
+    <div class="dashboard-home-item losers-component">
+            <h2 class="component-title">Biggest Gainers</h2>
+        {{#each model.gainersInfo as |stock|}}
+            {{stock-list stock=stock}}
+        {{/each}}
     </div>
-
     <div class="dashboard-home-item gainers-component">
         <h2 class="component-title">Biggest Losers</h2>
-    {{#each model.losersInfo as |stock|}}
-        {{stock-list stock=stock}}
-    {{/each}}
+        {{#each model.losersInfo as |stock|}}
+            {{stock-list stock=stock}}
+        {{/each}}
     </div>
-
-    
 </div>
 
 
