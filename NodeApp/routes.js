@@ -44,6 +44,20 @@ module.exports = function(app) {
           }) 
     })
 
+    app.get('/api/logo', function(req, res) {
+        request('https://api.iextrading.com/1.0/stock/' + req.query.symbol + '/logo', { json: true }, function (error, response, body) {
+            console.log('fetching logo for ' + req.query.symbol); 
+            res.jsonp(body);
+          }) 
+    })
+
+    app.get('/api/company', function(req, res) {
+        request('https://api.iextrading.com/1.0/stock/' + req.query.symbol + '/company', { json: true }, function (error, response, body) {
+            console.log('fetching company info for ' + req.query.symbol); 
+            res.jsonp(body);
+          }) 
+    })
+
     app.get('*', function(req, res) {
         res.sendfile('./public/index.html'); // load our public/index.html file
     });
