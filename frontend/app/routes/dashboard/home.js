@@ -10,8 +10,7 @@ export default Route.extend({
             controller.set('symbol', null);
           }
         },
-      
-
+        
     quereyParams: {
         symbol: {
           refreshModel: true

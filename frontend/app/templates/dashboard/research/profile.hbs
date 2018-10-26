@@ -1,3 +1,24 @@
-<h1>Made it to research/profile</h1>
+
+{{#if model.companyInfo.symbol}}
+<div class="profile-container">
+    <div class="profile-header">
+        <div class="header-image"> 
+            <img src="{{model.logo.url}}">
+        </div>
+        <div class="header-symbol">
+            <h2>{{model.companyInfo.symbol}}</h2>
+        </div>
+        <div class="header-company-name">
+            <h2>{{model.companyInfo.companyName}}</h2>
+        </div>
+    </div>
+</div>
+{{else}}
+<div class="invalid-symbol">
+    <h1>Please Enter a Valid Symbol</h1>
+</div>
+{{/if}}
+
+
 
 {{outlet}}
