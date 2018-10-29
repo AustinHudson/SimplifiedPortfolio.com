@@ -1,0 +1,25 @@
+.financial-header {
+    color: $darkerGreen;
+    background-color: transparent;
+    ;
+}
+
+.row-title {
+    color: white;
+    font-weight: 600;
+    text-align: left !important;
+    border-right: 1px solid #dee2e6;
+}
+
+.financial-table {
+    padding: 4% 3% 0 3%;
+}
+.table th, .table td {
+    padding: 1em;
+    vertical-align: top; 
+    text-align: center;
+    border-top: 1px solid #dee2e6;
+}
+tr:nth-child(even) {
+    background-color: #202020;
+}

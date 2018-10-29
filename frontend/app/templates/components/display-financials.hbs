@@ -1,0 +1,64 @@
+<div class="financial-table">
+<table class="table">
+    <tr class="financial-header">
+        <th>Quarter Ending</th>
+        {{#each earnings as |report|}}
+        <th>{{moment-format report.reportDate 'MMMM Do YYYY'}}</th>
+        {{/each}}
+  </tr>
+  <tr>
+    <td class="row-title">Gross Profit</td>
+     {{#each earnings as |report|}}
+        <td>{{format-financials report.grossProfit}}</td>
+        {{/each}}
+  </tr>
+   <tr>
+    <td class="row-title">Total Revenue</td>
+     {{#each earnings as |report|}}
+        <td>{{format-financials report.totalRevenue}}</td>
+        {{/each}}
+  </tr>
+   <tr>
+    <td class="row-title">Net Income</td>
+     {{#each earnings as |report|}}
+        <td>{{format-financials report.netIncome}}</td>
+        {{/each}}
+  </tr>
+   <tr>
+    <td class="row-title">R&D</td>
+     {{#each earnings as |report|}}
+        <td>{{format-financials report.researchAndDevelopment}}</td>
+        {{/each}}
+  </tr>
+  <tr>
+    <td class="row-title">Operating Expense</td>
+     {{#each earnings as |report|}}
+        <td>{{format-financials report.operatingExpense}}</td>
+        {{/each}}
+  </tr>
+  <tr>
+    <td class="row-title">Total Assets</td>
+     {{#each earnings as |report|}}
+        <td>{{format-financials report.totalAssets}}</td>
+        {{/each}}
+  </tr>
+  <tr>
+    <td class="row-title">Total Cash</td>
+     {{#each earnings as |report|}}
+        <td>{{format-financials report.totalCash}}</td>
+        {{/each}}
+  </tr>
+  <tr>
+    <td class="row-title">Total Debt</td>
+     {{#each earnings as |report|}}
+        <td>{{format-financials report.totalDebt}}</td>
+     {{/each}}
+  </tr>
+  <tr>
+    <td class="row-title">Shareholder Equity</td>
+     {{#each earnings as |report|}}
+        <td>{{format-financials report.shareholderEquity}}</td>
+        {{/each}}
+  </tr>
+</table>
+</div>
