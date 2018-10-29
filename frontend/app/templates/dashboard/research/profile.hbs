@@ -12,6 +12,51 @@
             <h2>{{model.companyInfo.companyName}}</h2>
         </div>
     </div>
+    <div class="profile-border"></div>
+    <div class="profile-body">
+        <div class="profile-info-list">
+            <div class="profile-info-item">
+                <div class="profile-info-category">
+                    Industry
+                </div>
+                 <div class="profile-info">
+                     {{model.companyInfo.industry}}
+                 </div>
+            </div>
+            <div class="profile-info-item">
+                <div class="profile-info-category">
+                    Sector
+                </div>
+                 <div class="profile-info">
+                     {{model.companyInfo.sector}}
+                 </div>
+            </div>
+            <div class="profile-info-item">
+                <div class="profile-info-category">
+                    CEO
+                </div>
+                 <div class="profile-info">
+                     {{model.companyInfo.CEO}}
+                 </div>
+            </div>
+            <div class="profile-info-item">
+                <div class="profile-info-category">
+                    Website
+                </div>
+                 <div class="profile-info">
+                     <div>
+                          <a href={{model.companyInfo.website}} target="_blank">
+                              {{model.companyInfo.website}}
+                          </a>
+                     </div>
+                    
+                 </div>
+            </div>
+        </div>
+        <div class="profile-description">
+            {{model.companyInfo.description}}
+        </div>
+    </div>
 </div>
 {{else}}
 <div class="invalid-symbol">
