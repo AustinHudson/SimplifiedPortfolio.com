@@ -7,6 +7,6 @@ export default Route.extend({
         let { symbol } = this.paramsFor('dashboard.research');
         console.log(symbol);
 
-        
+        return symbol;        
     }
 });
