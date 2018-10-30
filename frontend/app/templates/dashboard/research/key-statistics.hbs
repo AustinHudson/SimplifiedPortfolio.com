@@ -1,1 +1,82 @@
-<h1>Made it to key statistics page</h1>
+<div class="key-stats-header">
+    <div class="company-name">
+        <h3>{{model.basicInfo.companyName}}</h3>
+    </div>
+    <h3>|</h3>
+    <div class="company-symbol">
+        <h3>{{model.basicInfo.symbol}}</h3>
+    </div>
+</div>
+
+<div class="key-stats-container">
+    <div class="key-stats-column">
+        <div class="column-section">
+            {{section-pairing title="Current Price" info=model.basicInfo.latestPrice}}
+            {{section-pairing title="Previous Close" info=(format-dollar model.basicInfo.previousClose)}}
+            <div class="split-column-section">
+                <div class="split-column">
+                     {{section-pairing title="Change" info=(is-positive (format-dollar model.basicInfo.change))}}
+                    
+                </div>
+                <div class="split-column">
+                     {{section-pairing title="Change %" info=(is-positive (format-percentage model.basicInfo.changePercent))}}
+                </div>
+            </div>
+           
+        </div>
+        <div class="column-section">
+            {{section-pairing title="52 Week High" info=model.keyStatistics.week52high}}
+            {{section-pairing title="52 Week Low" info=model.keyStatistics.week52low}}
+            {{section-pairing title="52 Week Change" info=(is-positive (format-percentage model.keyStatistics.week52change))}}
+        </div>
+        <div class="column-section">
+            {{section-pairing title="Dividend Rate" info=model.keyStatistics.dividendRate}}
+            {{section-pairing title="Dividend Yield" info=(format-percentage model.keyStatistics.dividendYield)}}
+            {{section-pairing title="Dividend Date" info=(moment-format model.keyStatistics.exDividendDate 'MMMM Do YYYY')}}
+        </div>
+    </div>
+    <div class="key-stats-column">
+        <div class="column-section">
+            {{section-pairing title="Latest EPS" info=(is-positive model.keyStatistics.latestEPS)}}
+            {{section-pairing title="Latest EPS Date" info=(moment-format model.keyStatistics.latestEPSDate 'MMMM Do YYYY')}}
+            {{section-pairing title="Consensus EPS" info=(is-positive model.keyStatistics.consensusEPS)}}
+            {{section-pairing title="EPS Surprise" info=(is-positive (format-percentage model.keyStatistics.EPSSurprisePercent))}}
+        </div>
+        <div class="column-section">
+            {{section-pairing title="Revenue per Share" info=model.keyStatistics.revenuePerShare}}
+            {{section-pairing title="Revenue per Employee" info=(format-financials model.keyStatistics.revenuePerEmployee)}}
+            {{section-pairing title="EBITDA" info=(format-financials model.keyStatistics.EBITDA)}}
+        </div>
+        <div class="column-section">
+            {{section-pairing title="P/E Ratio High" info=model.keyStatistics.peRatioHigh}}
+            {{section-pairing title="P/E Ratio Low" info=model.keyStatistics.peRatioLow}}
+        </div>
+    </div>
+    <div class="key-stats-column">
+        <div class="column-section">
+            {{section-pairing title="Return on Equity" info=(format-percentage model.keyStatistics.returnOnEquity)}}
+            {{section-pairing title="Return on Assets" info=(format-percentage model.keyStatistics.returnOnAssets)}}
+        </div>
+        <div class="column-section">
+            {{section-pairing title="200 day Moving Average" info=(format-dollar model.keyStatistics.day200MovingAvg)}}
+            {{section-pairing title="50 day Moving Average" info=(format-dollar model.keyStatistics.day50MovingAvg)}}
+        </div>
+        <div class="column-section">
+            Price Change Over Time
+            <div class="split-column-section">
+                <div class="split-column">
+                    {{section-pairing title="5 Years" info=(is-positive (format-percentage model.keyStatistics.year5ChangePercent))}}
+                    {{section-pairing title="2 Years" info=(is-positive (format-percentage model.keyStatistics.year2ChangePercent))}}
+                    {{section-pairing title="1 Year" info=(is-positive (format-percentage model.keyStatistics.year1ChangePercent))}}
+                    {{section-pairing title="YTD" info=(is-positive (format-percentage model.keyStatistics.ytdChangePercent))}}
+                </div>
+                <div class="split-column">
+                    {{section-pairing title="6 Months" info=(is-positive (format-percentage model.keyStatistics.month6ChangePercent))}}
+                    {{section-pairing title="3 Months" info=(is-positive (format-percentage model.keyStatistics.month3ChangePercent))}}
+                    {{section-pairing title="1 Month" info=(is-positive (format-percentage model.keyStatistics.month1ChangePercent))}}
+                    {{section-pairing title="5 Days" info=(is-positive (format-percentage model.keyStatistics.day5ChangePercent))}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
