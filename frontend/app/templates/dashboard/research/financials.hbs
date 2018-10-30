@@ -1,2 +1,10 @@
+{{#if model.financials}}
+
 {{display-financials earnings=model.financials}}
 {{outlet}}
+
+{{else}}
+<div class="invalid-symbol">
+    <h1>Please Enter a Valid Symbol</h1>
+</div>
+{{/if}}

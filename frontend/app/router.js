@@ -20,6 +20,7 @@ Router.map(function() {
       this.route('chart');
       this.route('financials');
       this.route('technicalIndicators');
+      this.route('key-statistics');
     });
   });
 });

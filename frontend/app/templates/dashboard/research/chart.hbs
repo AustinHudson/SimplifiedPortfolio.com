@@ -1,4 +1,4 @@
-
+{{#if model.symbol}}
     <!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">
   <div id="tradingview_863b3"></div>
@@ -25,4 +25,9 @@
   </script>
 </div>
 <!-- TradingView Widget END -->
+{{else}}
+<div class="invalid-symbol">
+    <h1>Please Enter a Valid Symbol</h1>
+</div>
+{{/if}}
 
