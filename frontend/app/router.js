@@ -9,7 +9,6 @@ const Router = EmberRouter.extend({
 Router.map(function() {
   this.route('sign-up');
   this.route('sign-in');
-  // this.authenticatedRoute('dashboard');
   this.route('users');
 
   this.authenticatedRoute('dashboard', function() {

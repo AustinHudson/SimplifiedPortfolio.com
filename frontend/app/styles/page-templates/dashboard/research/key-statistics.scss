@@ -1,0 +1,54 @@
+.key-stats-container {
+    display: flex;
+    height: 90%;
+    padding: 0 0 2% 0;
+    justify-content: space-around;
+}
+
+.key-stats-column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 30%;
+    justify-content: space-between;
+    padding: 1%;
+}
+
+.column-section {
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    flex-basis: 30%;
+    justify-content: space-around;
+    background-color: rgba(11, 12, 16, 0.8);
+}
+
+.section-pairing {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pairing-title {
+    color: $darkerGreen;
+}
+
+.split-column {
+    flex-basis: 40%;
+}
+
+.split-column-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.key-stats-header {
+    padding: 2% 0 0 3%;  
+    display: flex;
+    width: 100%;
+    .company-name {
+        padding-right: 2%;
+    }
+    .company-symbol {
+        padding-left: 2%;
+    }
+}
