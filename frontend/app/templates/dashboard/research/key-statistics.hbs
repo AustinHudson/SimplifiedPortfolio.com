@@ -24,14 +24,26 @@
             </div>
            
         </div>
-        <div class="column-section">
+        <div class="column-section week-range">
             {{section-pairing title="52 Week High" info=model.keyStatistics.week52high}}
             {{section-pairing title="52 Week Low" info=model.keyStatistics.week52low}}
             {{section-pairing title="52 Week Change" info=(is-positive (format-percentage model.keyStatistics.week52change))}}
         </div>
         <div class="column-section">
-            {{section-pairing title="Dividend Rate" info=model.keyStatistics.dividendRate}}
-            {{section-pairing title="Dividend Yield" info=(format-percentage model.keyStatistics.dividendYield)}}
+            <span class="dividend-rate">
+                {{section-pairing title="Dividend Rate" info=model.keyStatistics.dividendRate}}
+            </span> {{bs-tooltip title="Public companies often return some amount of profits to their stockholders. 
+                                        This may be a cash payout in the form of a dividend check, or it may be additional stock in the company.
+                                         Dividends are decided by the company's board of directors and are drawn on that company's returned earnings account.
+                                         Dividend rate is another way to say 'dividend', which is the dollar amount of the dividend paid on a dividend-paying stock"
+                                        triggerElement=".dividend-rate"}}
+            <span class="dividend-yield">
+                {{section-pairing title="Dividend Yield" info=(format-percentage model.keyStatistics.dividendYield)}}
+            </span> 
+            {{bs-tooltip title="Dividend Yield is a financial ratio that indicates how much a company pays out in dividends each year
+                                relative to its share price. Dividend yield is represented as a percentage and can be calculated by dividing 
+                                the dollar value of dividends paid in a given year per share of stock held by the dollar value of one share of stock." 
+                                triggerElement=".dividend-yield"}}
             {{section-pairing title="Dividend Date" info=(moment-format model.keyStatistics.exDividendDate 'MMMM Do YYYY')}}
         </div>
     </div>
@@ -65,16 +77,16 @@
             Price Change Over Time
             <div class="split-column-section">
                 <div class="split-column">
-                    {{section-pairing title="5 Years" info=(is-positive (format-percentage model.keyStatistics.year5ChangePercent))}}
-                    {{section-pairing title="2 Years" info=(is-positive (format-percentage model.keyStatistics.year2ChangePercent))}}
-                    {{section-pairing title="1 Year" info=(is-positive (format-percentage model.keyStatistics.year1ChangePercent))}}
-                    {{section-pairing title="YTD" info=(is-positive (format-percentage model.keyStatistics.ytdChangePercent))}}
+                    {{section-pairing title="5 Years" info=(is-positive (format-sector model.keyStatistics.year5ChangePercent))}}
+                    {{section-pairing title="2 Years" info=(is-positive (format-sector model.keyStatistics.year2ChangePercent))}}
+                    {{section-pairing title="1 Year" info=(is-positive (format-sector model.keyStatistics.year1ChangePercent))}}
+                    {{section-pairing title="YTD" info=(is-positive (format-sector model.keyStatistics.ytdChangePercent))}}
                 </div>
                 <div class="split-column">
-                    {{section-pairing title="6 Months" info=(is-positive (format-percentage model.keyStatistics.month6ChangePercent))}}
-                    {{section-pairing title="3 Months" info=(is-positive (format-percentage model.keyStatistics.month3ChangePercent))}}
-                    {{section-pairing title="1 Month" info=(is-positive (format-percentage model.keyStatistics.month1ChangePercent))}}
-                    {{section-pairing title="5 Days" info=(is-positive (format-percentage model.keyStatistics.day5ChangePercent))}}
+                    {{section-pairing title="6 Months" info=(is-positive (format-sector model.keyStatistics.month6ChangePercent))}}
+                    {{section-pairing title="3 Months" info=(is-positive (format-sector model.keyStatistics.month3ChangePercent))}}
+                    {{section-pairing title="1 Month" info=(is-positive (format-sector model.keyStatistics.month1ChangePercent))}}
+                    {{section-pairing title="5 Days" info=(is-positive (format-sector model.keyStatistics.day5ChangePercent))}}
                 </div>
             </div>
         </div>
