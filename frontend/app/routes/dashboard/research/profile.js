@@ -10,6 +10,7 @@ export default Route.extend({
 
         const logoURL = 'http://localhost:3000/api/logo?symbol=' + symbol;
         const companyInfoURL = 'http://localhost:3000/api/company?symbol=' + symbol;
+        const peersURL = 'http://localhost:3000/api/peers?symbol=' + symbol;
 
         const logoAPI = $.ajax({
             url: logoURL,
@@ -23,9 +24,17 @@ export default Route.extend({
             dataType: 'jsonp',    
         });
 
+        const peersAPI = $.ajax({
+            url: peersURL,
+            types: 'GET',
+            dataType: 'jsonp',    
+        });
+        
+        
         return RSVP.hash({
             logo: logoAPI,  
             companyInfo: companyInfoAPI,
+            peers: peersAPI,
         })
     }
 });

@@ -46,9 +46,8 @@
 }
 
 .dashboard-research-content {
-    
     background-color: $dashboardBlack;
     border: 1px solid $darkerGreen;
     border-top: transparent;
-    height: 700px;
+    min-height: 700px;
 }

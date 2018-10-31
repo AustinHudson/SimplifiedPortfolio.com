@@ -1,3 +1,4 @@
+{{#if model.basicInfo.symbol}}
 <div class="key-stats-header">
     <div class="company-name">
         <h3>{{model.basicInfo.companyName}}</h3>
@@ -92,3 +93,8 @@
         </div>
     </div>
 </div>
+{{else}}
+    <div class="invalid-symbol">
+        <h1>Please Enter a Valid Symbol</h1>
+    </div>
+{{/if}}

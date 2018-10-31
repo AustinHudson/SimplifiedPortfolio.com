@@ -72,6 +72,13 @@ module.exports = function(app) {
           }) 
     })
 
+    app.get('/api/peers', function(req, res) {
+        request('https://api.iextrading.com/1.0/stock/' + req.query.symbol + '/peers', { json: true }, function (error, response, body) {
+            console.log('fetching peers for ' + req.query.symbol); 
+            res.jsonp(body);
+          }) 
+    })
+
     app.get('*', function(req, res) {
         res.sendfile('./public/index.html'); // load our public/index.html file
     });
