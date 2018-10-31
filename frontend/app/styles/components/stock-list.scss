@@ -1,9 +1,26 @@
 .panel-info {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: space-between;
     text-align: center;
+    flex-wrap: wrap;
+}
+.info-section {
+    display: flex;
+    justify-content: space-around;
+}
+
+.panel-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .panel-info-title {
     color: $mainFont;
+}
+
+.btn-c-stock-list {
+    margin-top: 10px;
+    justify-content: flex-end;
 }

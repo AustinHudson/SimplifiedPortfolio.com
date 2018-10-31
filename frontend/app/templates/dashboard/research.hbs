@@ -9,7 +9,7 @@
              <div class="form-group">
                  {{input type="text" class="form-control quick-search-input" value=stockSymbol placeholder="Enter Stock Symbol"}}
             <button
-                class='btn quick-search-btn'
+                class='btn custom-button quick-search-btn'
                 {{action 'researchSymbol' stockSymbol}}
             >Search
             </button>
@@ -31,6 +31,9 @@
     </div>
     <div>
         {{#nav.item}}{{#nav.link-to "dashboard.research.key-statistics"}}Key Statistics{{/nav.link-to}}{{/nav.item}}
+    </div>
+    <div>
+        {{#nav.item}}{{#nav.link-to "dashboard.research.news"}}News{{/nav.link-to}}{{/nav.item}}
     </div>
     <div>
         {{#nav.item}}{{#nav.link-to "dashboard.research.technicalIndicators"}}Technical Indicators{{/nav.link-to}}{{/nav.item}}

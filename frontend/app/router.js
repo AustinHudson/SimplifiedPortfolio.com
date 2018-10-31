@@ -18,8 +18,9 @@ Router.map(function() {
       this.route('profile');
       this.route('chart');
       this.route('financials');
-      this.route('technicalIndicators');
       this.route('key-statistics');
+      this.route('news');
+      this.route('technicalIndicators');
     });
   });
 });

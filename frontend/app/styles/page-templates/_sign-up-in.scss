@@ -66,20 +66,17 @@ body {
           }
         }
 
-          .sign-in-out-btn{
-            border-color: $darkerGreen;
-            background-color: transparent;
-            color: #fff;
-            box-shadow: 0 0 40px 40px $darkerGreen inset, 0 0 0 0 $darkerGreen;
-            transition: all 150ms ease-in-out;
-            
-            &:hover {
-              box-shadow: 0 0 10px 0 $brightGreen inset, 0 0 10px 4px $brightGreen;
-            }
-          }
-      
     }
   }
+  .custom-button{
+    border-color: $brightGreen;
+    background-color: transparent;
+    color: $mainFont;
+    transition: all 150ms ease-in-out;
 
+    &:hover {
+      box-shadow: 0 0 10px 0 $brightGreen inset, 0 0 10px 4px $brightGreen;
+    }
+  }
 
 

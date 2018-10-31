@@ -1,7 +1,8 @@
 {{#bs-accordion as |acc|}}
-        {{#acc.item value="1" title=stock.companyName}}    
+    {{#acc.item value="1" title=stock.companyName}}    
         <div class="panel-info">
-            <div class="panel-item">
+            <div class="info-section">
+                 <div class="panel-item">
                 <div class='panel-info-title'>
                     Symbol:
                 </div> 
@@ -11,7 +12,7 @@
             </div>
             <div class="panel-item">
                 <div class='panel-info-title'>
-                    Current Price:
+                    Price:
                 </div> 
                 <div>
                     {{stock.latestPrice}}
@@ -25,8 +26,22 @@
                     {{is-positive (format-percentage stock.changePercent)}}
                 </div>  
             </div>
+            </div>
+           
+            <div class="buttons-container btn-container-stock-list">
+                <div class="empty-buttons"></div>
+                <div class="buttons-collection">
+                    <div>
 
-        </div>
-        
-        {{/acc.item}}
+                    </div>
+                    <button class="btn custom-button more-info-button" {{action "goToResearch" stock.symbol}}>
+                        {{fa-icon "line-chart"}}
+                        
+                            {{bs-tooltip title="See more details"}}
+                        
+                    </button>
+                </div>
+            </div>
+        </div>    
+    {{/acc.item}}
 {{/bs-accordion}}
