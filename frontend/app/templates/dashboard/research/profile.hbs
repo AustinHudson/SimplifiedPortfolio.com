@@ -55,6 +55,16 @@
             {{model.companyInfo.description}}
         </div>
     </div>
+    <div class="profile-footer">
+        <div class="footer-title"><h3>Peers</h3></div>
+        {{#each model.peers as |peer|}}
+            <div class="peers-item">
+                 <button class="btn peer-button" {{action "researchSymbol" peer}}>
+                {{peer}}
+            </button>
+            </div>
+        {{/each}}
+    </div>
 </div>
 {{else}}
 <div class="invalid-symbol">

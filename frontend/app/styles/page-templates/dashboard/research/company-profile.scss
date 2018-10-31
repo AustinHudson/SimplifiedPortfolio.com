@@ -73,3 +73,34 @@
         }
     }
 }
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.profile-footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 5% 4% 0 3%; 
+    flex-wrap: wrap;
+
+    .footer-title {
+        color: $darkerGreen;
+    }
+}
+
+.profile-footer-item {
+    flex-basis: 10%;
+}
+
+.peer-button {
+    color: white;
+    background-color: transparent;
+
+    &:hover {
+        border: 1px solid $brightGreen;
+    }
+}
+

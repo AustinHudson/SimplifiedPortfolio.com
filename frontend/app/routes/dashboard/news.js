@@ -42,7 +42,6 @@ export default Route.extend({
         }); 
 
         const uid = this.get('session').get('uid');
-        console.log(uid);
         const getUser = this.store.findRecord('user', uid);
         
         return RSVP.hash({
