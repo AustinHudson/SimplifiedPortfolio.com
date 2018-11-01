@@ -64,10 +64,19 @@
     }
     .buttons-collection {
         display: flex;
-        justify-content: flex-start;
-        padding-left: 7%;
+        justify-content: space-around;
         flex-basis: 50%;
+        align-items: flex-end;
     }
 }
+
+.more-info-button {
+    padding: 1% 4px 1% 4px;
+}
+
+.add-watchlist-button {
+    padding: 1% 8px 1% 8px;
+}
+
 
 

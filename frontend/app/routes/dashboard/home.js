@@ -14,7 +14,9 @@ export default Route.extend({
         onSubmitForm(params) {
             this.refresh();
             this.transitionTo('dashboard.home', {queryParams: params});
-        }
+        },
+
+       
     },
 
     model(params){
