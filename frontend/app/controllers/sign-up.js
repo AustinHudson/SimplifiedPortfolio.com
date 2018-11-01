@@ -14,7 +14,6 @@ export default Controller.extend({
             console.log(userResponse);
             let newUser = this.store.createRecord('user', {
                 id: userResponse.uid,
-                name: 'Testing name',
                 followed_stocks: []
             });
             console.log(newUser);
