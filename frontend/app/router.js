@@ -22,7 +22,22 @@ Router.map(function() {
       this.route('news');
       this.route('technicalIndicators');
     });
+    this.route('portfolio', function() {
+      this.route('watchlist', function() {
+        this.route('list');
+        this.route('grid');
+      });
+      this.route('current-positions', function() {
+        this.route('list');
+        this.route('grid');
+      });
+      this.route('open-position');
+      this.route('close-position');
+      this.route('gains-losses');
+    });
   });
 });
+
+  
 
 export default Router;
