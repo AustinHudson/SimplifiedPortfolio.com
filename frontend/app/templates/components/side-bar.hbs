@@ -13,28 +13,33 @@
                 {{#link-to "dashboard.home"}}
                 <span class="side-nav-icon">{{fa-icon "home"}}</span>  
                 <span class="side-nav-name">Home</span>{{/link-to}}
+                {{bs-tooltip title="Home"}}
             </li>
             
             <li>
                 {{#link-to "dashboard.portfolio"}}
                  <span class="side-nav-icon">{{fa-icon "pie-chart"}}</span>
                   <span class="side-nav-name">Portfolio</span>{{/link-to}}
+                  {{bs-tooltip title="Portfolio"}}
             </li>
              <li>
                 {{#link-to "dashboard.news"}}
                  <span class="side-nav-icon">{{fa-icon "newspaper-o"}}</span> 
                  <span class="side-nav-name">News</span>{{/link-to}}
+                 {{bs-tooltip title="News"}}
             </li>
             <li>
                 {{#link-to "dashboard.research"}}
                  <span class="side-nav-icon">{{fa-icon "line-chart"}}</span> 
                  <span class="side-nav-name">Research</span>{{/link-to}}
+                 {{bs-tooltip title="Research"}}
             </li>
             <li>
                 <span onclick={{action 'signOut'}}>
                     <a href="#">
                          <span class="side-nav-icon">{{fa-icon "sign-out"}}</span>
                          <span class="side-nav-name">Sign Out</span></a>
+                         {{bs-tooltip title="Sign Out"}}
                 </span>
             </li>
         </ul>

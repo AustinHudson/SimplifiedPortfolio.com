@@ -11,12 +11,12 @@
     transition: all 0.3s;
     border-right: 2px solid $mainFont;
 }
-@media only screen and (min-width: 651px) {
+@media only screen and (min-width: 901px) {
     .collapsed-header {
         display: none;
     }
 }
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 900px) {
     #sidebar {
       width: 67px;
       overflow-x: hidden;

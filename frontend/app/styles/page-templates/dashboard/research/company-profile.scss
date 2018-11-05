@@ -1,6 +1,7 @@
 .profile-header {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
     align-items: flex-end;
     padding: 4% 0 3% 0;
 }
@@ -103,4 +104,40 @@
         border: 1px solid $brightGreen;
     }
 }
+@media only screen and (max-width: 500px) {
+    .profile-container {
+        font-size: .55em;
+    }
+    .header-image {
+        display: none;
+    }
+ 
+ }
 
+@media only screen and (max-width: 1450px) {
+   .profile-info-list{
+       font-size: .75em;
+   }
+
+}
+@media only screen and (max-width: 1200px) {
+    .profile-info-list{
+        flex-basis: 75%;
+        font-size: 1em;
+    }
+    .profile-description{
+        flex-basis: 75%;
+        margin-top: 25px;
+    }
+    .profile-header {
+        font-size: .75em;
+    }
+ 
+ }
+
+@media only screen and (max-width: 900px) {
+ 
+    .profile-info-list{
+        font-size: .75em;
+    }
+}
