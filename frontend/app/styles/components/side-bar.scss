@@ -11,6 +11,28 @@
     transition: all 0.3s;
     border-right: 2px solid $mainFont;
 }
+@media only screen and (min-width: 651px) {
+    .collapsed-header {
+        display: none;
+    }
+}
+@media only screen and (max-width: 650px) {
+    #sidebar {
+      width: 67px;
+      overflow-x: hidden;
+    }
+
+    .side-nav-name {
+        display: none;
+    }
+    .expanded-header {
+        display: none;
+    }
+}
+
+.side-nav-name {
+    padding-left: 17px;
+}
 
 #sidebar.active {
     margin-left: -250px;

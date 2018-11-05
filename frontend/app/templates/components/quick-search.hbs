@@ -1,13 +1,14 @@
 <div class="quick-search-component">
   <h2 class="component-title">Quick Stock Lookup</h2>
 <form class="form-inline quick-search-form">
-    <div class="form-group">
-      {{input type="text" class="form-control quick-search-input" value=stockSymbol placeholder="Enter Stock Symbol"}}
-       <button
-        class='btn quick-search-btn custom-button'
-        {{action 'submit' 'stockSymbol'}}
-    > Search
-    </button>
+    <div class="form-group search-section">
+      <div class="search-item">
+         {{input type="text" class="form-control quick-search-input" value=stockSymbol placeholder="Enter Stock Symbol"}}
+      </div>
+      <div class="search-item">
+        <button class='btn quick-search-btn custom-button'
+        {{action 'submit' 'stockSymbol'}}> Search</button>
+      </div>
     </div>
   </form>
   </div>
