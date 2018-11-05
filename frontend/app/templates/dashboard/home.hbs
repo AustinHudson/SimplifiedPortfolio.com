@@ -9,7 +9,7 @@
                 <div class="home-left-col-item">
                     {{quick-search submit='onSubmitForm'}}
                     {{#if model.basicInfo.symbol}}  
-                        {{simple-stock-view stock=model.basicInfo}}
+                        {{simple-stock-view stock=model.basicInfo watchlist-button="add-button"}}
                     {{else}}
                         <div class="simple-stock-view-component">
                             <h6>Please Enter a Valid Symbol</h6>

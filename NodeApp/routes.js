@@ -79,6 +79,20 @@ module.exports = function(app) {
           }) 
     })
 
+    app.get('/api/getBatchInfo', function(req, res) {
+        console.log('Made the batch request for watchlist');
+        request('https://api.iextrading.com/1.0/stock/market/batch?symbols=' + req.query.symbols + '&types=' + req.query.types, { json: true }, function (error, response, body) { 
+            
+            var result = [];
+            var keys = Object.keys(body);
+            keys.forEach(function(key) {
+                var info = Object.keys(body[key]);
+                result.push(body[key][info]);
+            });            
+            res.jsonp(result);
+          }) 
+    })
+
     app.get('*', function(req, res) {
         res.sendfile('./public/index.html'); // load our public/index.html file
     });
