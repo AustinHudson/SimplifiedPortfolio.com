@@ -3,27 +3,43 @@
     <!-- Sidebar -->
     <nav id="sidebar">
         <div class="sidebar-header">
-            {{#link-to "dashboard.home"}}<h3>Finance App</h3>{{/link-to}}
+            {{#link-to "dashboard.home"}}<span class="expanded-header"><h3>Finance App</h3></span>
+                                         <span class="collapsed-header"><h3>FA</h3></span>{{/link-to}}
         </div>
 
         <ul class="list-unstyled components">
             
             <li class="first-nav-link">
-                {{#link-to "dashboard.home"}}Home{{/link-to}}
+                {{#link-to "dashboard.home"}}
+                <span class="side-nav-icon">{{fa-icon "home"}}</span>  
+                <span class="side-nav-name">Home</span>{{/link-to}}
+                {{bs-tooltip title="Home"}}
             </li>
             
             <li>
-                {{#link-to "dashboard.portfolio"}}Portfolio{{/link-to}}
+                {{#link-to "dashboard.portfolio"}}
+                 <span class="side-nav-icon">{{fa-icon "pie-chart"}}</span>
+                  <span class="side-nav-name">Portfolio</span>{{/link-to}}
+                  {{bs-tooltip title="Portfolio"}}
             </li>
              <li>
-                {{#link-to "dashboard.news"}}News{{/link-to}}
+                {{#link-to "dashboard.news"}}
+                 <span class="side-nav-icon">{{fa-icon "newspaper-o"}}</span> 
+                 <span class="side-nav-name">News</span>{{/link-to}}
+                 {{bs-tooltip title="News"}}
             </li>
             <li>
-                {{#link-to "dashboard.research"}}Research{{/link-to}}
+                {{#link-to "dashboard.research"}}
+                 <span class="side-nav-icon">{{fa-icon "line-chart"}}</span> 
+                 <span class="side-nav-name">Research</span>{{/link-to}}
+                 {{bs-tooltip title="Research"}}
             </li>
             <li>
                 <span onclick={{action 'signOut'}}>
-                    <a href="#">Sign Out</a>
+                    <a href="#">
+                         <span class="side-nav-icon">{{fa-icon "sign-out"}}</span>
+                         <span class="side-nav-name">Sign Out</span></a>
+                         {{bs-tooltip title="Sign Out"}}
                 </span>
             </li>
         </ul>

@@ -44,3 +44,22 @@
     margin-left: 10px;
     border-radius: .75rem;
 }
+
+@media only screen and (max-width: 600px) {
+
+    .component-title {
+        font-size: 1.5em;
+    }
+    .search-section{
+        display: flex;
+       flex-wrap: wrap;
+        justify-content: center;
+       
+    }
+    .search-item {
+        flex-basis: 80%;
+        .quick-search-btn {
+            margin: 15px 0 0 35%;
+        }
+    }
+}
