@@ -45,6 +45,7 @@ export default Route.extend({
             types: 'GET',
             dataType: 'jsonp',    
         });
+
         return RSVP.hash({
             basicInfo: basicInfoAPI,
             gainersInfo: gainersAPI,
