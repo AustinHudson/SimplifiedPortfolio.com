@@ -1,7 +1,5 @@
 <h1 class="display-date">{{moment-format current-date 'dddd, MMMM Do YYYY'}}</h1>
-
 <div class="news-stories-container">
-    <div class='side-nav-mock'></div>
     <div class="news-stories">
         <h2>Latest News</h2>
         {{#each model.generalStories as |story|}}
@@ -19,7 +17,6 @@
             {{name}}
         {{/power-select}}
         </div>
-        
         {{#each model.personalizedStories as |story|}}
             {{news-stories story=story}}
         {{/each}}
