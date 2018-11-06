@@ -1,4 +1,5 @@
 {{#if model.basicInfo.symbol}}
+<div class="key-statistics">
 <div class="key-stats-header">
     <div class="company-name">
         <h3>{{model.basicInfo.companyName}}</h3>
@@ -8,7 +9,6 @@
         <h3>{{model.basicInfo.symbol}}</h3>
     </div>
 </div>
-
 <div class="key-stats-container">
     <div class="key-stats-column">
         <div class="column-section">
@@ -17,13 +17,11 @@
             <div class="split-column-section">
                 <div class="split-column">
                      {{section-pairing title="Change" info=(is-positive (format-dollar model.basicInfo.change))}}
-                    
                 </div>
                 <div class="split-column">
                      {{section-pairing title="Change %" info=(is-positive (format-percentage model.basicInfo.changePercent))}}
                 </div>
             </div>
-           
         </div>
         <div class="column-section week-range">
             {{section-pairing title="52 Week High" info=model.keyStatistics.week52high}}
@@ -92,6 +90,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 {{else}}
     <div class="invalid-symbol">
