@@ -20,3 +20,8 @@
 tr:nth-child(even) {
     background-color: #202020;
 }
+@media only screen and (max-width: 650px) { 
+    .financial-table {
+        font-size: .75em;
+    }
+}

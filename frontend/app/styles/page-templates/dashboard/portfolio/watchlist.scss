@@ -1,10 +1,44 @@
 .watchlist-grid {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
-    padding: 0 5% 0 5%;
+    padding: 2% 5% 5% 5%;
 }
 .watchlist-item {
     flex-basis: 26%;
-    margin-top: 4%;
+    margin-top: 3%;
+}
+
+.custom-button-remove{
+    padding-top: 3px;
+    padding-bottom: 2px;
+    border-color: #e60000;
+    background-color: transparent;
+    color: $mainFont;
+    transition: all 150ms ease-in-out;
+
+    &:hover {
+      box-shadow: 0 0 10px 0 #e60000 inset, 0 0 10px 4px #e60000;
+    }
+  }
+@media only screen and (max-width: 1800px) {
+    .watchlist-item {
+        flex-basis: 34%;
+    }
+}
+@media only screen and (max-width: 1400px) {
+    .watchlist-item {
+        flex-basis: 51%;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .watchlist-item {
+        flex-basis: 75%;
+    }
+}
+@media only screen and (max-width: 600px){
+    .watchlist-item {
+        flex-basis: 95%;
+        font-size: .75em;
+    }
 }

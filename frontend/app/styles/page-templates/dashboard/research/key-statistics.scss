@@ -1,10 +1,10 @@
 .key-stats-container {
     display: flex;
-    height: 700px;
-    padding: 0 0 2% 0;
+    min-height: 700px;
+    margin-bottom: 25px;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
-
 .key-stats-column {
     display: flex;
     flex-direction: column;
@@ -12,47 +12,96 @@
     justify-content: space-between;
     padding: 1%;
 }
-
+.key-statistics {
+    display: flex;
+    flex-direction: column;
+}
 .column-section {
     display: flex;
     flex-direction: column;
     padding: 2%;
-    flex-basis: 30%;
     justify-content: space-around;
     background-color: rgba(11, 12, 16, 0.8);
 }
-
 .section-pairing {
     display: flex;
     justify-content: space-between;
 }
-
 .pairing-title {
     color: $darkerGreen;
 }
-
 .split-column {
-    flex-basis: 40%;
+    display: flex;
+    flex-direction: column;
 }
-
 .split-column-section {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
-
 .key-stats-header {
-    padding: 2% 0 0 3%;  
+    padding-top: 2%;
+    justify-content: center;
     display: flex;
     width: 100%;
     .company-name {
         padding-right: 2%;
+        flex-basis: 50%;
+        text-align: end;
     }
     .company-symbol {
         padding-left: 2%;
+        flex-basis: 40%;
     }
 }
-
 .tooltip-inner {
     max-width: 300px;
+}
+@media only screen and (max-width: 1600px) {
+    .key-stats-column {
+        flex-basis: 60%;
+        flex-wrap: wrap;
+    }
+
+    .column-section {
+        margin-top: 15px; 
+    }
+}
+@media only screen and (max-width: 1600px) {
+    .split-column {
+        flex-basis: 30%;
+    }
+}
+@media only screen and (max-width: 1250px) {
+    .key-stats-column {
+        flex-basis: 85%;
+    }
+    .split-column {
+        flex-basis: 30%
+    }
+}
+@media only screen and (max-width: 600px) {
+    .key-stats-column {
+        flex-basis: 95%;
+    }
+    .key-statistics {
+        font-size: .75em;
+    }
+    .key-stats-header {
+        h3 {
+            font-size: 1em;
+        }
+    }
+    .split-column {
+        flex-basis: 200%;
+    }
+}
+@media only screen and (min-width: 1600px) { 
+    .column-section {
+        flex-basis: 30%; 
+    }
+    .split-column {
+        flex-basis: 40%;
+    }
 }
