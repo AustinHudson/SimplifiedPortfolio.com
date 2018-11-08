@@ -1,0 +1,36 @@
+.open-position-container {
+    display: flex;
+    justify-content: center;
+    padding: 5%;
+}
+.position-form-component {
+    flex-basis: 45%;
+}
+
+.position-form-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: $dashboardBlack; 
+    padding: 25px;
+    border-radius: 15px 50px;
+    border: 3px solid white;
+}
+.search-item {
+    display: flex;
+    justify-content: center;
+    margin-top: 4%;
+}
+.position-item {
+    margin-top: 5%;
+    h3 {
+        text-align: center;
+        padding: 5px;
+    }
+    .position-valid-symbol {
+        border: 2px solid #009933;
+    }
+    .position-invalid-symbol{
+        border: 2px solid  #e60000;
+    }
+}
