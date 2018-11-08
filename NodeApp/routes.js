@@ -93,6 +93,13 @@ module.exports = function(app) {
           }) 
     })
 
+    app.get('/api/getBatchInfoUF', function(req, res) {
+        console.log('Made the unformatted batch request for portfolio');
+        request('https://api.iextrading.com/1.0/stock/market/batch?symbols=' + req.query.symbols + '&types=' + req.query.types, { json: true }, function (error, response, body) { 
+           res.jsonp(body);
+          }) 
+    })
+
     app.get('*', function(req, res) {
         res.sendfile('./public/index.html'); // load our public/index.html file
     });
