@@ -1,0 +1,25 @@
+.current-position-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-top: 25px;
+}
+
+.current-position-item {
+    flex-basis: 25%;
+    padding: 3%;
+    background-color: $dashboardBlack; 
+    border-radius: .75rem;
+}
+
+.current-position-body {
+    .section-pairing {
+        margin-top: 15px;
+    }
+}
+
+.current-position-footer {
+    border-top: 1px solid white;
+    margin-top: 25px;
+    padding-top: 25px; 
+}

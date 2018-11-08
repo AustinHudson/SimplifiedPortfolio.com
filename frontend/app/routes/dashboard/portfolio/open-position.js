@@ -45,10 +45,9 @@ export default Route.extend({
             }
 
             let totalValue = position.get('price') * position.get('shares') - position.get('fees');
-            console.log(totalValue);
             
             let newPosition = this.store.createRecord('position', {
-                symbol: this.controller.get('symbol'),
+                symbol: this.controller.get('symbol').toUpperCase(),
                 purchase_date: selectedDate,
                 purchase_price: position.get('price'),
                 num_of_shares: position.get('shares'),
@@ -61,10 +60,9 @@ export default Route.extend({
                 user.get('positions').addObject(newPosition);
                 newPosition.save().then(() => {
                     user.save();
-                    console.log(user);
                 });
             });
-
+            this.refresh();
             this.transitionTo('dashboard.portfolio.current-positions');
         }
     },
