@@ -1,0 +1,50 @@
+<div class="position-form-container">
+  <h2 class="component-title">Open a Position</h2>
+<form class="form quick-search-form"  {{action (route-action "addPosition" this) on="submit"}}>
+    <div class="form-group search-section">
+      <div class="position-item">
+          Symbol
+        {{input type="text" class="form-control quick-search-input" value=symbol placeholder="Enter Stock Symbol"}}
+         <div class="search-item">
+        <button class='btn custom-button position-button'
+        {{action (route-action "verifySymbol" symbol)}}> Verify Symbol</button>
+      </div>
+      </div>
+      <div class="position-item">
+          {{#if model.basicInfo.symbol}}
+          <h3 class="position-valid-symbol">{{model.basicInfo.companyName}}</h3>
+          {{else}}
+          <h3 class="position-invalid-symbol">Please Enter a Valid Symbol</h3>
+          {{/if}}
+      </div>
+      <div class="position-item">
+          Date
+         {{input type="date" class="form-control quick-search-input" value=date placeholder="Enter Purchase Date"}}
+      </div>
+      <div class="position-item">
+          Price
+         {{input type="number" class="form-control quick-search-input" step=".01" value=price placeholder=pricePlaceholder}}
+      </div>
+      <div class="position-item">
+          Shares
+         {{input type="number" class="form-control quick-search-input" step=".01" value=shares placeholder=numSharesPlaceholder}}
+      </div>
+      <div class="position-item">
+         Fees
+         {{input type="number" class="form-control quick-search-input" step=".01" value=fees placeholder="Enter any Transactional Fees"}}
+      </div>
+      {{#if model.basicInfo.symbol}}
+        <div class="search-item">
+            <button class='btn position-button custom-button'
+            type="submit">Add Position</button>
+        </div>
+      {{else}}
+        <div class="search-item">
+            <button class='btn position-button custom-button'
+            type="submit" disabled>Add Position</button>
+             {{bs-tooltip title="Please Enter and Verify a Valid Symbol"}}
+        </div>
+      {{/if}}
+    </div>
+  </form>
+  </div>
