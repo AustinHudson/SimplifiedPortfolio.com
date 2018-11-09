@@ -1,20 +1,28 @@
 <div class="current-position-container">
     {{#each model as |position|}}
         <div class="current-position-item">
-            <div class="current-position-heading">
-                <h3>{{model.currentStockData.position.symbol.quote.companyName}}</h3>
-                <h3>{{position.symbol}}</h3>
+            <div class="key-stats-header">
+                <div class="company-name">
+                    <h3>{{position.companyName}}</h3>
+                </div>
+                <div class="divider"></div>
+                <div class="company-symbol">
+                    <h3>{{position.symbol}}</h3>
+                </div>
             </div>
             <div class="current-position-body">
                 {{section-pairing title="Purchase Date" info=(moment-format position.purchase_date 'MM-D-YYYY') }}
-                {{section-pairing title="Price per Share" info=position.purchase_price}}
+                {{section-pairing title="Price per Share" info=(format-dollar position.purchase_price)}}
                 {{section-pairing title="Number of Shares" info=position.num_of_shares}}
-                {{section-pairing title="Brokerage Fees" info=position.brokerage_fees}}
+                {{section-pairing title="Brokerage Fees" info=(format-dollar position.brokerage_fees)}}
+                {{section-pairing title="Total Value at Purchase" info=(format-dollar position.value_at_purchase)}}
             </div>
             <div class="current-position-footer">
-                {{section-pairing title="Total Value at Purchase" info=position.value_at_purchase}}
-                {{section-pairing title="Current Value" info=position.currentValue}}
-                {{!-- {{section-pairing title="Total Value at Purchase" info=position.value_at_purchase}} --}}
+                {{section-pairing title="Latest Price" info=(format-dollar position.latestPrice)}}
+                
+                {{section-pairing title="Current Value" info=(format-dollar position.currentValue)}}
+                {{section-pairing title="Position Value Change ($)" info=(is-positive (format-dollar position.priceChange))}}
+                {{section-pairing title="Position Value Change (%)" info=(is-positive (format-sector position.priceChangePercent))}}
 
             </div>
         </div>

@@ -58,6 +58,8 @@ export default Route.extend({
                     companyName: currentData.companyName,
                     latestPrice: currentData.latestPrice,
                     currentValue: currentValue,
+                    priceChange: priceChange,
+                    priceChangePercent: priceChangePercent
                 }
 
                 combinedArray.push(newObject);
