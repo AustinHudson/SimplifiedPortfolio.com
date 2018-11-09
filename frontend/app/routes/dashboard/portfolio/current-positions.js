@@ -42,7 +42,7 @@ export default Route.extend({
                 let currentData = results[1][i];
 
                 let currentValue = currentData.latestPrice * position.num_of_shares;
-                let priceOfOwnedShares = position.purchase_price * position.num_of_shares + position.brokerage_fees;
+                let priceOfOwnedShares = Number((position.purchase_price * position.num_of_shares)) + Number(position.brokerage_fees);
                 let priceChange  = currentValue - priceOfOwnedShares;
                 let priceChangePercent = priceChange/priceOfOwnedShares;
 
