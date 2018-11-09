@@ -4,6 +4,4 @@ export default Controller.extend({
 
     queryParams: ['symbol'],
     symbol: null,
-
-   
 });

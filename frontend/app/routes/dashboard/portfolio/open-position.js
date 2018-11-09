@@ -18,10 +18,14 @@ export default Route.extend({
             this.refresh();
         },
 
-        addPosition(position) {
+        updatePosition(position) {
 
             if (!position.get('price')){
                 alert('Please Enter a Purchase Price.');
+                return;
+            }
+            if (position.get('price') < 0){
+                alert('Purchase price cannot be a negative value.');
                 return;
             }
             if (!position.get('date')){
@@ -39,8 +43,16 @@ export default Route.extend({
                 alert('Please Enter the number of shares purchased.');
                 return;
             }
+            if (position.get('shares') < 0){
+                alert('The amount of shares purchased cannot be a negative value');
+                return;
+            }
             if (!position.get('fees')){
                 alert('Please Enter the total amount of fees for this transaction.');
+                return;
+            }
+            if (position.get('fees') < 0){
+                alert('The fee amount cannot be a negative value');
                 return;
             }
 

@@ -1,1 +1,49 @@
-{{outlet}}
+<div class="open-position-container">
+    <div class="position-form-container position-form-component">
+    <h2 class="component-title">Close a Position</h2>
+    <div>
+        {{#power-select 
+            selected = position
+            options=model.positionList
+            onchange=(route-action "getPosition") 
+            as |name|}}
+            {{name.symbol}}
+        {{/power-select}}
+    </div>
+  {{#if model.selectedPosition}}
+    <form class="form quick-search-form position-form" id="close-form" {{action (route-action "updatePosition" this model.selectedPosition model.basicInfo) on="submit"}}>
+        <div class="form-group search-section">
+            <div class="position-item">
+                <h3 class="position-valid-symbol">{{model.basicInfo.companyName}}</h3>
+            </div>
+        <div class="position-item">
+            Date
+            {{input type="date" class="form-control quick-search-input" value=date placeholder=(current-date)}}
+        </div>
+        <div class="position-item">
+            Price
+            {{input type="number" class="form-control quick-search-input" step=".01" value=price placeholder=model.basicInfo.latestPrice}}
+        </div>
+        <div class="position-item">
+            Shares
+            {{input type="number" class="form-control quick-search-input" step="1" value=shares placeholder=model.selectedPosition.num_of_shares}}
+        </div>
+        <div class="position-item">
+            Fees
+            {{input type="number" class="form-control quick-search-input" step=".01" value=fees placeholder="Enter any Transactional Fees"}}
+        </div>
+        <div class="search-item">
+            <button class='btn position-button custom-button'
+            type="submit">Close Position</button>
+        </div>
+    </div>
+ </form>
+{{else}}
+    <div class="position-item">
+        <h3>Please Select a Position</h3>
+    </div>
+{{/if}}
+    </div>
+ </div>
+
+

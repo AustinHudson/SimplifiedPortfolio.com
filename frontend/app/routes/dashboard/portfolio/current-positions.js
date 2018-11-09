@@ -42,8 +42,9 @@ export default Route.extend({
                 let currentData = results[1][i];
 
                 let currentValue = currentData.latestPrice * position.num_of_shares;
-                let priceChange  = currentValue - position.value_at_purchase;
-                let priceChangePercent = priceChange/position.value_at_purchase;
+                let priceOfOwnedShares = position.purchase_price * position.num_of_shares + position.brokerage_fees;
+                let priceChange  = currentValue - priceOfOwnedShares;
+                let priceChangePercent = priceChange/priceOfOwnedShares;
 
                 console.log(priceChange);
                 console.log(priceChangePercent);
@@ -54,7 +55,7 @@ export default Route.extend({
                     purchase_price: position.purchase_price,
                     num_of_shares: position.num_of_shares,
                     brokerage_fees: position.brokerage_fees,
-                    value_at_purchase: position.value_at_purchase,
+                    value_at_purchase: priceOfOwnedShares,
                     companyName: currentData.companyName,
                     latestPrice: currentData.latestPrice,
                     currentValue: currentValue,
