@@ -1,3 +1,4 @@
+
 <div class="current-position-container">
     {{#each model as |position|}}
         <div class="current-position-item">
@@ -28,10 +29,3 @@
         </div>
     {{/each}}
 </div>
-
-<h1>{{model.currentStockData}}</h1>
-
-{{#each model.currentStockData as |stockInfo|}}
-<h1>{{stockInfo.companyName}}</h1>
-{{/each}}
-
