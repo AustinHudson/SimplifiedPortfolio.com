@@ -1,6 +1,6 @@
 <div class="position-form-container">
   <h2 class="component-title">Open a Position</h2>
-<form class="form quick-search-form position-form"  {{action (route-action "addPosition" this) on="submit"}}>
+<form class="form quick-search-form position-form"  {{action (route-action "updatePosition" this) on="submit"}}>
     <div class="form-group search-section">
       <div class="position-item">
           Symbol
@@ -17,6 +17,7 @@
           <h3 class="position-invalid-symbol">Please Enter a Valid Symbol</h3>
           {{/if}}
       </div>
+      {{#if model.basicInfo.symbol}}
       <div class="position-item">
           Date
          {{input type="date" class="form-control quick-search-input" value=date placeholder="Enter Purchase Date"}}
@@ -27,22 +28,16 @@
       </div>
       <div class="position-item">
           Shares
-         {{input type="number" class="form-control quick-search-input" step=".01" value=shares placeholder=numSharesPlaceholder}}
+         {{input type="number" class="form-control quick-search-input" step="1" value=shares placeholder=numSharesPlaceholder}}
       </div>
       <div class="position-item">
          Fees
          {{input type="number" class="form-control quick-search-input" step=".01" value=fees placeholder="Enter any Transactional Fees"}}
       </div>
-      {{#if model.basicInfo.symbol}}
+      
         <div class="search-item">
             <button class='btn position-button custom-button'
             type="submit">Add Position</button>
-        </div>
-      {{else}}
-        <div class="search-item">
-            <button class='btn position-button custom-button'
-            type="submit" disabled>Add Position</button>
-             {{bs-tooltip title="Please Enter and Verify a Valid Symbol"}}
         </div>
       {{/if}}
     </div>

@@ -16,6 +16,7 @@ export default Controller.extend({
                 id: userResponse.uid,
                 followed_stocks: [],
                 positions: [],
+                closed_positions: [],
                 
             });
             console.log(newUser);
