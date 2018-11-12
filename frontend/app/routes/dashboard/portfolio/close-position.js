@@ -77,6 +77,8 @@ export default Route.extend({
                 company_name: basicInfo.companyName,
                 close_date: selectedDate,
                 close_price: formData.get('price'),
+                purchase_price: position.get('purchase_price'),
+                purchase_fees: position.get('brokerage_fees'),
                 close_num_of_shares: formData.get('shares'),
                 close_brokerage_fees: formData.get('fees'),
                 profit: profit,
