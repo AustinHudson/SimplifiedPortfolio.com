@@ -1,5 +1,11 @@
 <div class="research-news-container">
     {{#each model as |story|}}
-        {{news-stories story=story}}
+        {{#if story.headline}}
+            {{news-stories story=story}}
+        {{else}}
+            <div class="invalid-symbol">
+                <h1>Please Enter a Valid Symbol</h1>
+            </div>
+        {{/if}}
     {{/each}}
 </div>

@@ -14,6 +14,7 @@ export default Route.extend({
             types: 'GET',
             dataType: 'jsonp'
         }); 
+        console.log(newsStoriesAPI);
         return newsStoriesAPI;
     }
 });
