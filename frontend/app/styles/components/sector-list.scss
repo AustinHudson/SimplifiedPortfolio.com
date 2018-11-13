@@ -13,13 +13,31 @@
 .list-group-item {
     width: 100%;
     background-color: transparent;
-    border: 1px solid $darkerGreen;
+    border: 2px solid $grayBlack;
 }
 .sector-list-item {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
+    .sector-list-title {
+        flex-basis: 50%;
+        text-align: left; 
+        color: $mainFont;
+    }
 }
 
+@media only screen and (max-width: 600px) {
+    .home-left-col-item-sector {
+        padding: 10px;
+    }
+    .list-group {
+        margin-top: 10px; 
+    }
+}
 
+@media only screen and (max-width: 375px) {
+    .list-group {
+        font-size: .85em;
+    }
+}

@@ -48,6 +48,7 @@
 
 .range-item {
     align-self: center;
+    margin-top: 10px;
 }
 .range-text {
     color: $darkerGreen;
@@ -64,7 +65,7 @@
     }
     .buttons-collection {
         display: flex;
-        justify-content: space-around;
+        justify-content: flex-end;
         flex-basis: 50%;
         align-items: flex-end;
     }
@@ -72,11 +73,32 @@
 
 .more-info-button {
     padding: 1% 4px 1% 4px;
+    margin-right: 10%;
 }
 
 .add-watchlist-button {
     padding: 1% 8px 1% 8px;
 }
 
+@media only screen and (max-width: 600px) {
+
+    .simple-stock-view-component {
+        padding: 10px;
+    }
+
+    .price-range-container {
+        justify-content: space-evenly;
+    }
+
+    .range-text {
+        p {
+            margin-bottom: 0%;
+        }
+    }
+    .range-item-2 {
+        margin-top: 10px;
+    }
+
+}
 
 

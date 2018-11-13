@@ -58,8 +58,14 @@
     }
     .search-item {
         flex-basis: 80%;
+        margin-top: 0px;
+        input {
+            font-size: 1em;
+        }
+        
         .quick-search-btn {
-            margin: 15px 0 0 35%;
+            margin-top: 15px;
+            margin-left: 0px;
         }
     }
 }

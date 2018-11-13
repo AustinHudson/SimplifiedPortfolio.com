@@ -1,23 +1,5 @@
 
 <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-<div class="research-search">
-    <div class="research-date">
-        <h1 class="display-date display-research-date">{{moment-format current-date 'dddd, MMMM Do YYYY'}}</h1>
-    </div>
-    <div class="research-form-item">
-        <form class="form-inline research-search-form">  
-             <div class="form-group">
-                 {{input type="text" class="form-control quick-search-input" value=stockSymbol placeholder="Enter Stock Symbol"}}
-            <button
-                class='btn custom-button quick-search-btn'
-                {{action 'researchSymbol' stockSymbol}}
-            >Search
-            </button>
-            </div>
-        </form>
-    </div>
-</div>
-
 <div class="research-tabs">
   {{#bs-nav type="tabs" as |nav|}}
     <div>
@@ -35,9 +17,6 @@
     <div>
         {{#nav.item}}{{#nav.link-to "dashboard.research.news"}}News{{/nav.link-to}}{{/nav.item}}
     </div>
-    {{!-- <div>
-        {{#nav.item}}{{#nav.link-to "dashboard.research.technicalIndicators"}}Technical Indicators{{/nav.link-to}}{{/nav.item}}
-    </div> --}}
   {{/bs-nav}}
   <div class="dashboard-research-content">
       {{outlet}}

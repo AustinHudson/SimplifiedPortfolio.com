@@ -22,6 +22,11 @@
 body {
     font-family: 'Montserrat', sans-serif;
 }
+.quick-search-component {
+    justify-content: center;
+}
+
+
 
 .dashboard-home-container {
     display: flex;
@@ -37,7 +42,21 @@ body {
     background-color: $dashboardBlack;
     border-radius: 0.75rem;
 }
-
+@media only screen and (max-width: 1500px) {
+    .gainers-component, .losers-component {
+        flex-basis: 80%;
+        margin-top: 50px;
+    }
+    .dashboard-home-item {
+        flex-basis: 80%;
+    }
+    .simple-stock-view-component {
+        font-size: 1.75em;
+    }
+    .quick-search-component {
+        align-items: center;
+    }
+}
 @media only screen and (max-width: 900px) {
     .display-date{
         margin-left: 80px;
@@ -47,18 +66,27 @@ body {
         margin-left: 80px;
     }
     .gainers-component, .losers-component {
-        flex-basis: 70%;
+        flex-basis: 80%;
         margin-top: 50px;
     }
     .simple-stock-view-component, .quick-search-component, 
     .home-left-col-item-sector {
         margin-right: 13px;
     }
-}
-
-@media only screen and (max-width: 1500px) {
-    .gainers-component, .losers-component {
+    .dashboard-home-item {
         flex-basis: 80%;
-        margin-top: 50px;
+    }
+    .simple-stock-view-component {
+        font-size: 1em;
     }
 }
+
+@media only screen and (max-width: 600px) {
+
+    .dashboard-home-container {
+        font-size: .7em;
+    }
+    
+}
+
+

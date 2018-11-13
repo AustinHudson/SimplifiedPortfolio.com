@@ -6,7 +6,7 @@
                 <div class='panel-info-title'>
                     Symbol:
                 </div> 
-                <div>
+                <div class='panel-info-data'>
                     {{stock.symbol}}
                 </div>
             </div>
@@ -14,7 +14,7 @@
                 <div class='panel-info-title'>
                     Price:
                 </div> 
-                <div>
+                <div class='panel-info-data'>
                     {{stock.latestPrice}}
                 </div> 
             </div>
@@ -22,7 +22,7 @@
                 <div class='panel-info-title'>
                     Change: 
                 </div> 
-                <div>
+                <div class='panel-info-data'>
                     {{is-positive (format-percentage stock.changePercent)}}
                 </div>  
             </div>

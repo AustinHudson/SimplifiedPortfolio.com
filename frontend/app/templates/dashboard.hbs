@@ -1,5 +1,21 @@
 
 {{side-bar signOutAction=(action 'signOut')}}
-
+<div class="research-search">
+    <div class="research-date">
+        <h1 class="display-date">{{moment-format current-date 'dddd, MMMM Do YYYY'}}</h1>
+    </div>
+    <div class="research-form-item">
+        <form class="form-inline research-search-form">  
+             <div class="form-group">
+                 {{input type="text" class="form-control quick-search-input" value=stockSymbol placeholder="Enter Stock Symbol"}}
+            <button
+                class='btn custom-button quick-search-btn'
+                {{action 'researchSymbol' stockSymbol}}
+            >Search
+            </button>
+            </div>
+        </form>
+    </div>
+</div>
     
 {{outlet}}

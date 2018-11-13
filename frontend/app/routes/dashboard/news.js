@@ -22,6 +22,12 @@ export default Route.extend({
         getStories(company){
             this.refresh();
             this.transitionTo({queryParams: {'symbol':company}});
+        },
+
+        researchSymbol(company){
+            console.log(company);
+            this.transitionTo('dashboard.research', {queryParams: {'symbol':company}});
+            this.transitionTo('dashboard.research.profile');
         }
     },
       
