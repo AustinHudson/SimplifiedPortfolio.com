@@ -2,8 +2,13 @@ import Route from '@ember/routing/route';
 
 export default Route.extend({
 
-    beforeModel() {
-        this.transitionTo('dashboard.portfolio.watchlist');
+    beforeModel(symbol) {
+
+        if (symbol) {
+           return
+        }else {
+            this.transitionTo('dashboard.portfolio.watchlist');
+        }
     },
 
     actions: {

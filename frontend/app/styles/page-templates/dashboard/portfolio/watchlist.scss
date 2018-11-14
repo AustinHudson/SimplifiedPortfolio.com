@@ -10,11 +10,10 @@
 }
 
 .custom-button-remove{
-    padding-top: 3px;
-    padding-bottom: 2px;
     border-color: #e60000;
     background-color: transparent;
     color: $mainFont;
+    vertical-align: none;
     transition: all 150ms ease-in-out;
 
     &:hover {

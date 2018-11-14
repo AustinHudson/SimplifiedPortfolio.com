@@ -13,6 +13,11 @@ export default Component.extend({
             this.get('router').transitionTo('/dashboard/research?symbol=' + symbol);
         },
 
+        goToOpenPosition(symbol) {
+            this.get('router').transitionTo('/dashboard/portfolio');
+            this.get('router').transitionTo('/dashboard/portfolio/open-position?symbol=' + symbol);
+        }
+
         
     }
 });

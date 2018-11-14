@@ -55,29 +55,67 @@ export default Route.extend({
                 alert('The fee amount cannot be a negative value');
                 return;
             }
+            
+            let currentSymbol = this.controller.get('symbol').toUpperCase();
 
-            let totalValue = position.get('price') * position.get('shares') - position.get('fees');
             
-            let newPosition = this.store.createRecord('position', {
-                symbol: this.controller.get('symbol').toUpperCase(),
-                purchase_date: selectedDate,
-                purchase_price: position.get('price'),
-                num_of_shares: position.get('shares'),
-                brokerage_fees: position.get('fees'),
-                value_at_purchase: totalValue,
-            })
-            const uid = this.get('session').get('uid');
+            this.store.findRecord('user', this.get('session').get('uid')).then((user) => {
+                return user.get('positions').then((positions) => {
+                    let matchFound = false;
+                    let matchingPosition;
+                    positions.forEach(function(item) {
+                            console.log('symbol pos: ' + item.symbol + " symbol adding: " + currentSymbol);
+                        if( item.symbol == currentSymbol){
+                            matchFound = true;
+                            matchingPosition = item;
+                        }
+                     })
+                     if(!matchFound){
+                        return false;
+                     }else{
+                         return matchingPosition;
+                     }
+                    }).then((matchingPos)=> {
+                        if(matchingPos){
+                            let newShares = matchingPos.num_of_shares + Number(position.get('shares'));
+                            let newPrice = ((matchingPos.purchase_price * matchingPos.num_of_shares) + (Number(position.get('price')) * Number(position.get('shares'))))/newShares;
+                            let newFees = matchingPos.brokerage_fees + Number(position.get('fees'));
+                    
+                            matchingPos.set('purchase_price', newPrice);
+                            matchingPos.set('num_of_shares', newShares);
+                            matchingPos.set('brokerage_fees', newFees);
+                            matchingPos.save();
+
+                            this.refresh();
+                            this.transitionTo('dashboard.portfolio.current-positions');
+                        }
+                        else {
+                            let totalValue = position.get('price') * position.get('shares') - position.get('fees');
             
-            this.store.findRecord('user', uid).then((user) => {
-                user.get('positions').addObject(newPosition);
-                newPosition.save().then(() => {
-                    user.save();
-                });
-            });
-            this.refresh();
-            this.transitionTo('dashboard.portfolio.current-positions');
-        }
-    },
+                            let newPosition = this.store.createRecord('position', {
+                                symbol: this.controller.get('symbol').toUpperCase(),
+                                purchase_date: selectedDate,
+                                purchase_price: position.get('price'),
+                                num_of_shares: position.get('shares'),
+                                brokerage_fees: position.get('fees'),
+                                value_at_purchase: totalValue,
+                            })
+                            const uid = this.get('session').get('uid');
+                            
+                            this.store.findRecord('user', uid).then((user) => {
+                                user.get('positions').addObject(newPosition);
+                                newPosition.save().then(() => {
+                                    user.save();
+                                });
+                            });
+                            this.refresh();
+                            this.transitionTo('dashboard.portfolio.current-positions');
+                            }
+                        })      
+                        
+                    }) 
+                } 
+            },
 
     model(params) {
         

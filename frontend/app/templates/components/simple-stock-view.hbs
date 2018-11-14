@@ -36,6 +36,10 @@
     <div class="buttons-container">
         <div class="empty-buttons"></div>
         <div class="buttons-collection">
+             <button class="btn custom-button more-info-button" {{action "goToOpenPosition" stock.symbol}}>
+                {{fa-icon "folder-open"}}
+                {{bs-tooltip title="Open a Position"}}
+            </button>
             <button class="btn custom-button more-info-button" {{action "goToResearch" stock.symbol}}>
                 {{fa-icon "line-chart"}}
                 {{bs-tooltip title="See more details"}}
