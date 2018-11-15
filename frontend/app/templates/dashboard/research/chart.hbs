@@ -1,3 +1,12 @@
+<div class="key-stats-header">
+        <div class="company-name ">
+            <h3>{{model.companyName}}</h3>
+        </div>
+         <div class="divider"></div>
+        <div class="company-symbol">
+            <h3>{{model.symbol}}</h3>
+        </div>
+    </div>
 <!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">
   <div id="tradingview_520b0"></div>
@@ -24,3 +33,12 @@
   </script>
 </div>
 <!-- TradingView Widget END -->
+<div class="profile-footer add-options">
+    <div class="peers-item footer-option-L">
+        <button class="btn peer-button" {{action "addToWatchlist" model}} >Add to Watchlist</button>
+    </div>
+     <div class="divider"></div>
+    <div class="peers-item footer-option-R" {{action "goToOpenPosition" model}}>
+       <button class="btn peer-button" >Open a Position</button>
+    </div>
+</div>

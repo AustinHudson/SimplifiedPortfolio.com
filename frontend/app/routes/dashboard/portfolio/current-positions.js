@@ -1,10 +1,30 @@
 import Route from '@ember/routing/route';
 import $ from 'jquery';
-import RSVP from 'rsvp';
 
 export default Route.extend({
 
-    
+    actions: {
+        goToOpenPosition (symbol){
+            this.transitionTo('dashboard.portfolio.open-position', {queryParams: {'symbol':symbol}});
+        },
+        goToClosePosition (symbol) {
+
+            return this.store.findRecord('user', this.get('session').get('uid')).then((user) => {
+                return user.get('positions').toArray();
+            }).then((positionArray) => {
+                for(let i = 0; i < positionArray.length; i++){
+                    if (positionArray[i].symbol == symbol){
+                        return positionArray[i].id;
+                    }
+                }
+            }).then((id) => {
+                this.transitionTo('dashboard.portfolio.close-position', {queryParams: {'position':id, 'symbol':symbol}});
+            })
+        },
+        goToResearch(symbol) {
+            this.transitionTo('/dashboard/research?symbol=' + symbol);
+        },
+    },
 
     model() {
         var positionSymbolsArray = [];
@@ -62,15 +82,12 @@ export default Route.extend({
                     priceChange: priceChange,
                     priceChangePercent: priceChangePercent
                 }
-
                 combinedArray.push(newObject);
             }
-
             console.log('combined array: ' + combinedArray);
             combinedArray.forEach(function(item) {
                 console.log(item);
             })
-
             return combinedArray;       
         })
     }

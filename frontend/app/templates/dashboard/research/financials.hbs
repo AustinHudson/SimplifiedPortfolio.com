@@ -1,5 +1,23 @@
-{{#if model.financials}}
-    {{display-financials earnings=model.financials}}
+{{#if model.quarterlyInfo.financials}}
+<div class="key-stats-header">
+        <div class="company-name ">
+            <h3>{{model.basicInfo.companyName}}</h3>
+        </div>
+         <div class="divider"></div>
+        <div class="company-symbol">
+            <h3>{{model.basicInfo.symbol}}</h3>
+        </div>
+    </div>
+    {{display-financials earnings=model.quarterlyInfo.financials}}
+   <div class="profile-footer add-options">
+        <div class="peers-item footer-option-L">
+            <button class="btn peer-button" {{action "addToWatchlist" model.basicInfo.symbol}} >Add to Watchlist</button>
+        </div>
+        <div class="divider"></div>
+        <div class="peers-item footer-option-R" {{action "goToOpenPosition" model.basicInfo.symbol}}>
+            <button class="btn peer-button" >Open a Position</button>
+    </div>
+</div>
 {{else}}
 <div class="invalid-symbol">
     <h1>Please Enter a Valid Symbol</h1>

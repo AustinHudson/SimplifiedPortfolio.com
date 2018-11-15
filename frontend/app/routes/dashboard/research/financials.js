@@ -1,14 +1,13 @@
 import Route from '@ember/routing/route';
 import $ from 'jquery';
-
+import RSVP from 'rsvp';
 
 export default Route.extend({
 
     model() {
         let { symbol } = this.paramsFor('dashboard.research');
-        console.log(symbol);
-
         const quarterlyURL = 'http://localhost:3000/api/quarterly_financials?symbol=' + symbol;
+        const basicInfoURL = 'http://localhost:3000/api/basicInfo?symbol=' + symbol;
 
         const quarterlyAPI = $.ajax({
             url: quarterlyURL,
@@ -16,8 +15,15 @@ export default Route.extend({
             dataType: 'jsonp',    
         });
 
-        console.log(quarterlyAPI);
+        const basicInfoAPI = $.ajax({
+            url: basicInfoURL,
+            types: 'GET',
+            dataType: 'jsonp',    
+        });
 
-        return quarterlyAPI;   
+        return RSVP.hash({
+            quarterlyInfo: quarterlyAPI,
+            basicInfo: basicInfoAPI
+        })
     }
 });

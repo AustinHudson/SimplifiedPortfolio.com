@@ -26,6 +26,24 @@
                 {{section-pairing title="Position Value Change (%)" info=(is-positive (format-sector position.priceChangePercent))}}
 
             </div>
+            <div class="buttons-container">
+        <div class="empty-buttons"></div>
+        <div class="buttons-collection">
+             <button class="btn custom-button more-info-button" {{action "goToResearch" position.symbol}}>
+                {{fa-icon "line-chart"}}
+                {{bs-tooltip title="See more details"}}
+            </button>
+            <button class="btn custom-button-add more-info-button" {{action "goToOpenPosition" position.symbol }}>
+                {{fa-icon "plus"}}
+                {{bs-tooltip title="Add to Position"}}
+            </button>
+             <button class="btn custom-button-remove" {{action "goToClosePosition" position.symbol }}>
+                {{fa-icon "minus"}}
+                {{bs-tooltip title="Close Position"}}
+            </button>
         </div>
+    </div>
+        </div>
+        
     {{/each}}
 </div>

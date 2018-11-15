@@ -16,8 +16,8 @@
         <td>{{moment-format position.close_date 'MM-D-YYYY'}}</td>
         <td>{{position.symbol}}</td>
         <td>{{position.company_name}}</td>
-        <td>{{position.purchase_price}}</td>
-        <td>{{position.close_price}}</td>
+        <td>{{format-dollar position.purchase_price}}</td>
+        <td>{{format-dollar position.close_price}}</td>
         <td>{{position.close_num_of_shares}}</td>
         <td>{{position.close_brokerage_fees}}</td>
         <td>{{is-positive (format-dollar position.profit)}}</td>

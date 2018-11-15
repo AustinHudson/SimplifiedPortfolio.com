@@ -32,12 +32,16 @@
                 <div class="buttons-collection">
                     <div>
                     </div>
+                    <button class="btn custom-button-add more-info-button" {{action "goToOpenPosition" stock.symbol}}>
+                        {{fa-icon "plus"}}
+                        {{bs-tooltip title="Open a Position"}}
+                    </button>
                     <button class="btn custom-button more-info-button" {{action "goToResearch" stock.symbol}}>
                         {{fa-icon "line-chart"}}
                         {{bs-tooltip title="See more details"}}
                     </button>
-                    <button class="btn custom-button-add add-watchlist-button" {{action "addToWatchlist" stock.symbol}}>
-                        {{fa-icon "plus"}}
+                    <button class="btn custom-button-white add-watchlist-button" {{action "addToWatchlist" stock.symbol}}>
+                        {{fa-icon "list"}}
                         {{bs-tooltip title="Add to watchlist"}}
                     </button>
                 </div>

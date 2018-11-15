@@ -55,7 +55,7 @@
             {{model.companyInfo.description}}
         </div>
     </div>
-    <div class="profile-footer">
+    <div class="profile-footer peers-footer">
         <div class="footer-title"><h3>Peers</h3></div>
         {{#each model.peers as |peer|}}
             <div class="peers-item">
@@ -64,6 +64,15 @@
             </button>
             </div>
         {{/each}}
+    </div>
+    <div class="profile-footer add-options">
+        <div class="peers-item footer-option-L">
+            <button class="btn peer-button" {{action "addToWatchlist" model.companyInfo.symbol}} >Add to Watchlist</button>
+        </div>
+         <div class="divider"></div>
+        <div class="peers-item footer-option-R" {{action "goToOpenPosition" model.companyInfo.symbol}}>
+           <button class="btn peer-button" >Open a Position</button>
+        </div>
     </div>
 </div>
 {{else}}

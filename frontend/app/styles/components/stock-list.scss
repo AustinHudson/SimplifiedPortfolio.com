@@ -23,6 +23,17 @@
 .btn-container-stock-list {
     margin-top: 30px;
 }
+.custom-button-white{
+    vertical-align: none;
+    border-color: white;
+    background-color: transparent;
+    color: $mainFont;
+    transition: all 150ms ease-in-out;
+
+    &:hover {
+      box-shadow: 0 0 10px 0 white inset, 0 0 10px 4px white;
+    }
+}
 .custom-button-add{
     vertical-align: none;
     border-color: #009933;
