@@ -77,10 +77,14 @@ export default Route.extend({
                      }
                     }).then((matchingPos)=> {
                         if(matchingPos){
-                            let newShares = matchingPos.num_of_shares + Number(position.get('shares'));
-                            let newPrice = ((matchingPos.purchase_price * matchingPos.num_of_shares) + (Number(position.get('price')) * Number(position.get('shares'))))/newShares;
-                            let newFees = matchingPos.brokerage_fees + Number(position.get('fees'));
-                    
+                            let newShares = Number(matchingPos.num_of_shares) + Number(position.get('shares'));
+                            let newPrice = ((Number(matchingPos.purchase_price) * Number(matchingPos.num_of_shares)) + (Number(position.get('price')) * Number(position.get('shares'))))/newShares;
+                            let newFees = Number(matchingPos.brokerage_fees) + Number(position.get('fees'));
+                            
+                            console.log(newShares);
+                            console.log(newPrice);
+                            console.log(newFees);
+                            
                             matchingPos.set('purchase_price', newPrice);
                             matchingPos.set('num_of_shares', newShares);
                             matchingPos.set('brokerage_fees', newFees);

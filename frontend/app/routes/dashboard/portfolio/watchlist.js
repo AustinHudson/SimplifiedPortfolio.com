@@ -20,15 +20,12 @@ export default Route.extend({
 
     model() {
 
-        
         return RSVP.hash({
 
             stockData: this.store.findRecord('user', this.get('session').get('uid')).then((user) => {
 
                 let watchlistStocks = user.get('followed_stocks');
-                console.log("fs: " + watchlistStocks);
                 let types = 'quote';
-        
                 const watchlistInfoURL = 'http://localhost:3000/api/getBatchInfo?symbols=' + watchlistStocks + '&types=' + types;
         
                 return $.ajax({
@@ -36,13 +33,11 @@ export default Route.extend({
                     types: 'GET',
                     dataType: 'jsonp',    
                 });
-                }),
+            }),
 
             followedStocks:  this.store.findRecord('user', this.get('session').get('uid')).then((user) => {
-
                 return user.get('followed_stocks');
             })
-
         });
     }
 });

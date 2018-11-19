@@ -81,7 +81,7 @@ module.exports = function(app) {
 
     app.get('/api/getBatchInfo', function(req, res) {
         console.log('Made the batch request for watchlist');
-        request('https://api.iextrading.com/1.0/stock/market/batch?symbols=' + req.query.symbols + '&types=' + req.query.types, { json: true }, function (error, response, body) { 
+        request('https://api.iextrading.com/1.0/stock/market/batch?symbols=' + req.query.symbols + '&types=' + req.query.types + "&displayPercent=true", { json: true }, function (error, response, body) { 
             
             var result = [];
             var keys = Object.keys(body);
