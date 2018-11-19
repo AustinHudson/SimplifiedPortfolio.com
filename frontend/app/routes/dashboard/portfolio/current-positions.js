@@ -1,5 +1,6 @@
 import Route from '@ember/routing/route';
 import $ from 'jquery';
+import RSVP from 'rsvp';
 
 export default Route.extend({
 
@@ -55,6 +56,7 @@ export default Route.extend({
         ]).then((results) => {
             
             let combinedArray = [];
+            let dataArray = [['Symbol', 'Amount Owned']];
 
             for (let i = 0; i < results[1].length; i++){
                
@@ -85,10 +87,33 @@ export default Route.extend({
                 combinedArray.push(newObject);
             }
             console.log('combined array: ' + combinedArray);
-            combinedArray.forEach(function(item) {
-                console.log(item);
+            combinedArray.forEach((item) => {
+                console.log(item.symbol);
+                console.log(item.value_at_purchase);
+
+                dataArray.push([item.symbol, item.currentValue])
+            
             })
-            return combinedArray;       
+
+            
+
+            return RSVP.hash({
+                currentPositions: combinedArray,
+                chartData: dataArray
+                    
+                
+
+                //     [
+                //     ['Task', 'Hours per Day'],
+                //     ['Work', 11],
+                //     ['Eat', 2],
+                //     ['Commute', 2],
+                //     ['Watch TV', 2],
+                //     ['Sleep', 7],
+                //   ]
+
+            })
+                 
         })
     }
 });

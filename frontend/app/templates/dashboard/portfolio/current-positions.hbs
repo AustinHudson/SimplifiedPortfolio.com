@@ -1,6 +1,19 @@
 
 <div class="current-position-container">
-    {{#each model as |position|}}
+    <div class="current-position-item">
+        <div class="key-stats-header">
+            <h3>Current Totals</h3>
+        </div>
+        <div class="current-position-body">
+            {{pie-chart data=model.chartData}}
+        </div>
+        <div class="current-position-footer">
+            {{#each model.currentPositions as |position|}}
+                {{section-pairing title=position.symbol info=(format-dollar position.currentValue)}}
+            {{/each}}
+        </div>
+    </div>
+    {{#each model.currentPositions as |position|}}
         <div class="current-position-item">
             <div class="key-stats-header">
                 <div class="company-name">
