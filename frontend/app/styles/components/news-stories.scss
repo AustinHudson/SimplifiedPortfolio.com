@@ -46,8 +46,8 @@ h5 .btn-link:focus {
 }
 
 .card-body {
-    color: $darkerGreen;
-    background-color: rgba(152,152,152, 0.2);
+    // color: $darkerGreen;
+    background-color: rgb(11, 12, 16);
 }
 
 .card {
@@ -55,11 +55,11 @@ h5 .btn-link:focus {
 }
 
 .read-more-link {
-    color: $mainFont;
+    color: $darkerGreen;
 }
 
 .read-more-link:hover {
-    color: white;
+    color: $brightGreen;
 }
 
 @media only screen and (max-width: 900px) {

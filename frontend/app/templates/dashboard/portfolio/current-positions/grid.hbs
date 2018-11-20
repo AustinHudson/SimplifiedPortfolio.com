@@ -1,1 +1,66 @@
-{{outlet}}
+<div class="view-toggle-container">
+  <div class="toggle-buttons">
+    <button class="btn peer-button toggle-button-active" {{action "changeView" 'grid'}} >Grid</button>
+    <button class="btn peer-button" {{action "changeView" 'list'}} >List</button>
+  </div>
+</div>
+<div class="current-position-container">
+    <div class="current-position-item">
+        <div class="key-stats-header">
+            <h3>Current Totals</h3>
+        </div>
+        <div class="current-position-body">
+            {{pie-chart data=model.chartData}}
+        </div>
+        <div class="current-position-footer">
+            {{#each model.currentPositions as |position|}}
+                {{section-pairing title=position.symbol info=(format-dollar position.currentValue)}}
+            {{/each}}
+        </div>
+    </div>
+    {{#each model.currentPositions as |position|}}
+        <div class="current-position-item">
+            <div class="key-stats-header">
+                <div class="company-name">
+                    <h3>{{position.companyName}}</h3>
+                </div>
+                <div class="divider"></div>
+                <div class="company-symbol">
+                    <h3>{{position.symbol}}</h3>
+                </div>
+            </div>
+            <div class="current-position-body">
+                {{section-pairing title="Purchase Date" info=(moment-format position.purchase_date 'MM-D-YYYY') }}
+                {{section-pairing title="Price per Share" info=(format-dollar position.purchase_price)}}
+                {{section-pairing title="Number of Shares" info=position.num_of_shares}}
+                {{section-pairing title="Brokerage Fees" info=(format-dollar position.brokerage_fees)}}
+                {{section-pairing title="Cost of Purchased Shares" info=(format-dollar position.value_at_purchase)}}
+            </div>
+            <div class="current-position-footer">
+                {{section-pairing title="Latest Price" info=(format-dollar position.latestPrice)}}
+                {{section-pairing title="Current Value" info=(format-dollar position.currentValue)}}
+                {{section-pairing title="Position Value Change ($)" info=(is-positive (format-dollar position.priceChange))}}
+                {{section-pairing title="Position Value Change (%)" info=(is-positive (format-sector position.priceChangePercent))}}
+
+            </div>
+            <div class="buttons-container">
+        <div class="empty-buttons"></div>
+        <div class="buttons-collection">
+             <button class="btn custom-button more-info-button" {{action "goToResearch" position.symbol}}>
+                {{fa-icon "line-chart"}}
+                {{bs-tooltip title="See more details"}}
+            </button>
+            <button class="btn custom-button-add more-info-button" {{action "goToOpenPosition" position.symbol }}>
+                {{fa-icon "plus"}}
+                {{bs-tooltip title="Add to Position"}}
+            </button>
+             <button class="btn custom-button-remove" {{action "goToClosePosition" position.symbol }}>
+                {{fa-icon "minus"}}
+                {{bs-tooltip title="Close Position"}}
+            </button>
+        </div>
+    </div>
+        </div>
+        
+    {{/each}}
+</div>

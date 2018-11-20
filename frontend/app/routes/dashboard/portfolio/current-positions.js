@@ -5,6 +5,10 @@ import RSVP from 'rsvp';
 export default Route.extend({
 
     actions: {
+        changeView(view){
+            console.log(view);
+            this.transitionTo('dashboard.portfolio.current-positions.' + view);
+        },
         goToOpenPosition (symbol){
             this.transitionTo('dashboard.portfolio.open-position', {queryParams: {'symbol':symbol}});
         },
@@ -25,6 +29,10 @@ export default Route.extend({
         goToResearch(symbol) {
             this.transitionTo('/dashboard/research?symbol=' + symbol);
         },
+    },
+
+    beforeModel() {
+        this.transitionTo('dashboard.portfolio.current-positions.grid');
     },
 
     model() {

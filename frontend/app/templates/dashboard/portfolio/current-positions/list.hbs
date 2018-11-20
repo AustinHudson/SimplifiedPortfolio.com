@@ -1,1 +1,27 @@
-{{outlet}}
+<div class="view-toggle-container">
+  <div class="toggle-buttons">
+    <button class="btn peer-button" {{action "changeView" 'grid'}} >Grid</button>
+    <button class="btn peer-button toggle-button-active" {{action "changeView" 'list'}} >List</button>
+  </div>
+</div>
+<div class="positions-list-view-container">
+  <div class="list-totals-card">
+    {{#bs-accordion as |acc|}}
+        {{#acc.item value="1" title="Current Totals"}}    
+            <div class="position-list-container">
+                <div class="position-list-section">
+                     {{pie-chart data=model.chartData}}
+                </div> 
+                <div class="position-list-section">
+                    {{#each model.currentPositions as |position|}}
+                      {{section-pairing title=position.symbol info=(format-dollar position.currentValue)}}
+                    {{/each}}
+                </div>
+            </div>            
+        {{/acc.item}}
+    {{/bs-accordion}}
+  </div>
+{{#each model.currentPositions as |position|}}
+    {{positions-list position=position}}
+{{/each}}
+</div>

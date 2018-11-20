@@ -34,6 +34,28 @@
     
         border-right: 2px solid $brightGreen;
 }
+
+.btn:focus {
+    box-shadow: none;
+    outline:0;
+}
+.view-toggle-container{
+    display: flex;
+    justify-content: center;
+    padding-top: 3%;
+    
+    .toggle-buttons{
+        border: 1px solid white;
+        border-radius: .25rem;
+        display: flex;
+        justify-content: center;
+    }
+    .toggle-button-active {
+        background-color: $darkerGreen;
+        color: white;
+        font-weight: 700;
+    }
+}
 @media only screen and (max-width: 1650px) {
     .current-position-item{
         flex-basis: 40%;
