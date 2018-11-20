@@ -15,7 +15,7 @@ export default GoogleChartsService.extend({
         alignment: 'center'
     },
     pieHole: '0.5',
-    colors: ['#001f3f', '#0074D9', '#2ECC40', '#7FDBFF', '#3D9970', '#39CCCC']
+    colors: ['#001f3f','#2ECC40', '#0074D9', '#7FDBFF', '#3D9970', '#39CCCC']
   },
 
 });

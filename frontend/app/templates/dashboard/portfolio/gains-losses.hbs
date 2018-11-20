@@ -39,6 +39,10 @@
             <td>{{is-positive (format-sector model.totals.total-profit-percentage)}}</td>
         </tr>
     </table>
+    <button class="btn custom-button more-info-button" {{action "excelExport" model.positions}}>
+        {{fa-icon "file-excel-o"}}
+        {{bs-tooltip title="Export to Excel"}}
+    </button>
     
 
 </div>
