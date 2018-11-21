@@ -4,12 +4,13 @@ import RSVP from 'rsvp';
 export default Route.extend({
 
     actions: {
+        filterDates(range) {
+            this.refresh();
+            this.transitionTo('/dashboard/portfolio/gains-losses?range=' + range);
+        },
+
         excelExport(positions){
-            console.log('made it to excel export');
-            console.log(positions);
-
-
-
+            
             let data = [
                 ['Date', 'Symbol', 'Company Name', 'Purchase Price', 'Closing Price', 'Number of Shares', 'Closing Fees', 'Profit($)', 'Profit(%)'],
             ];
@@ -31,18 +32,17 @@ export default Route.extend({
         }        
     },
 
-
     model() {
-        
+
+        let { range } = this.paramsFor('dashboard.portfolio.gains-losses');
 
         let closedPositions = this.store.findRecord('user', this.get('session').get('uid')).then((user) => {
+            return user.get('closed_positions').sortBy('close_date').toArray(); 
+        })
+        let totals =  this.store.findRecord('user', this.get('session').get('uid')).then((user) => {
+           
+            return  user.get('closed_positions'); 
 
-            return user.get('closed_positions').toArray(); 
-       })
-
-       let totals =  this.store.findRecord('user', this.get('session').get('uid')).then((user) => {
-
-           return  user.get('closed_positions'); 
         }).then((positions) => {
             let totalBought = 0;
             let totalSold = 0;
@@ -50,29 +50,23 @@ export default Route.extend({
             let totalProfitPercentage = 0;
 
             positions.forEach(element => {
-                console.log(element);
                 totalBought += Number(element.purchase_price) * Number(element.close_num_of_shares) + Number(element.purchase_fees);
                 totalSold += Number(element.close_price) * Number(element.close_num_of_shares) - Number(element.close_brokerage_fees);
             });
-            console.log("total bought: " + totalBought);
-            console.log("total sold: "  +totalSold);
             totalProfit = totalSold-totalBought;
-            console.log("total profit: " + totalProfit);
             totalProfitPercentage = totalProfit/totalBought;
-            console.log("total profit percent: " + totalProfitPercentage);
 
             return {
                 "total-bought": totalBought,
                 "total-sold": totalSold,
                 "total-profit": totalProfit,
                 "total-profit-percentage": totalProfitPercentage
-            }
-            
+            }  
         })
-
         return RSVP.hash({
             positions: closedPositions,
-            totals: totals
+            totals: totals,
+            dateRanges: ['5D', '1M', '3M', '6M', 'YTD', '1Y', 'ALL']        
         })
     }
 });

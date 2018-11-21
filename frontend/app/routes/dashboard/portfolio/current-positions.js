@@ -40,9 +40,7 @@ export default Route.extend({
 
         return Promise.all([
             this.store.findRecord('user', this.get('session').get('uid')).then((user) => {
-
                 return user.get('positions').toArray();
-                
             }),
             this.store.findRecord('user', this.get('session').get('uid')).then((user) => {
                 return user.get('positions').then((positions) => {
@@ -51,16 +49,15 @@ export default Route.extend({
                      })
                      return positionSymbolsArray;
                 }).then((symbols) => {
-     
-                 const watchlistInfoURL = 'http://localhost:3000/api/getBatchInfo?symbols=' + symbols + '&types=quote';
+                    const watchlistInfoURL = 'http://localhost:3000/api/getBatchInfo?symbols=' + symbols + '&types=quote';
                  
-                  return $.ajax({
-                     url: watchlistInfoURL,
-                     types: 'GET',
-                     dataType: 'jsonp',    
-                     })
-                 });
-             })
+                    return $.ajax({
+                        url: watchlistInfoURL,
+                        types: 'GET',
+                        dataType: 'jsonp',    
+                    })
+                });
+            })
         ]).then((results) => {
             
             let combinedArray = [];
@@ -100,28 +97,11 @@ export default Route.extend({
                 console.log(item.value_at_purchase);
 
                 dataArray.push([item.symbol, item.currentValue])
-            
             })
-
-            
-
             return RSVP.hash({
                 currentPositions: combinedArray,
                 chartData: dataArray
-                    
-                
-
-                //     [
-                //     ['Task', 'Hours per Day'],
-                //     ['Work', 11],
-                //     ['Eat', 2],
-                //     ['Commute', 2],
-                //     ['Watch TV', 2],
-                //     ['Sleep', 7],
-                //   ]
-
             })
-                 
         })
     }
 });

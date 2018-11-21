@@ -1,0 +1,24 @@
+.gains-losses-dropdown {
+    width: 20%;
+    padding: 2% 3% 0 3%; 
+}
+@media only screen and (max-width: 1450px) {
+    .gains-losses-dropdown{
+        width: 25%;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .gains-losses-dropdown{
+        width: 30%;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .gains-losses-dropdown{
+        width: 40%;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .gains-losses-dropdown{
+        width: 50%;
+    }
+}
