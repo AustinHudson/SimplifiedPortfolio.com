@@ -22,6 +22,7 @@
 @import "page-templates/dashboard/research/news.scss";
 @import "page-templates/dashboard/portfolio/watchlist.scss";
 @import "page-templates/dashboard/portfolio/current-positions.scss";
+@import "page-templates/dashboard/portfolio/gains-losses.scss";
 
 
 #main-nav{
@@ -40,5 +41,8 @@
         transform: translateX(-50%);   
     }
 }
+
+
+$ember-power-select-highlighted-background: $darkerGreen !default;
 
 @import "ember-power-select";
