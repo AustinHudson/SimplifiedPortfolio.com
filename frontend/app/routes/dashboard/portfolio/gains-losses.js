@@ -40,16 +40,79 @@ export default Route.extend({
             return user.get('closed_positions').sortBy('close_date').toArray(); 
         })
         let totals =  this.store.findRecord('user', this.get('session').get('uid')).then((user) => {
+
+           
            
             return  user.get('closed_positions'); 
 
         }).then((positions) => {
+
+            let inRangePositions = [];
+
+            console.log("getting current range in route: " + range);
+
+            let daysAgo5 = moment().subtract(5, 'days').startOf('day');
+            let monthsAgo1 = moment().subtract(1, 'months');
+            let monthsAgo3 = moment().subtract(3, 'months');
+            let monthsAgo6 = moment().subtract(6, 'months');
+            let today = moment().startOf('day');
+            let startOfYear = moment().startOf('year');
+            let yearsAgo1 = moment().subtract(1, 'years');
+
+            switch(range) {
+                case 'ALL':
+                    inRangePositions = positions.slice();
+                case '1Y':
+                    positions.forEach((item) => {
+                        if (item.close_date > yearsAgo1){
+                            inRangePositions.push(item);
+                        }
+                    }) 
+                    break;
+                case 'YTD':
+                    positions.forEach((item) => {
+                        if (item.close_date > startOfYear){
+                            inRangePositions.push(item);
+                        }
+                    }) 
+                    break;
+                case '6M':
+                    positions.forEach((item) => {
+                        if (item.close_date > monthsAgo6){
+                            inRangePositions.push(item);
+                        }
+                    }) 
+                    break;
+                case '3M':
+                    positions.forEach((item) => {
+                        if (item.close_date > monthsAgo3){
+                            inRangePositions.push(item);
+                        }
+                    }) 
+                    break;
+                case '1M':
+                    positions.forEach((item) => {
+                        if (item.close_date > monthsAgo1){
+                            inRangePositions.push(item);
+                        }
+                    }) 
+                    break;
+                case '5D':
+                    positions.forEach((item) => {
+                        if (item.close_date > daysAgo5){
+                            inRangePositions.push(item);
+                        }
+                    }) 
+                    break;
+            }
+
+
             let totalBought = 0;
             let totalSold = 0;
             let totalProfit = 0;
             let totalProfitPercentage = 0;
 
-            positions.forEach(element => {
+            inRangePositions.forEach(element => {
                 totalBought += Number(element.purchase_price) * Number(element.close_num_of_shares) + Number(element.purchase_fees);
                 totalSold += Number(element.close_price) * Number(element.close_num_of_shares) - Number(element.close_brokerage_fees);
             });

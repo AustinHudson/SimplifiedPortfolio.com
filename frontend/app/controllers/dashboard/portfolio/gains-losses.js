@@ -33,5 +33,11 @@ export default Controller.extend({
                 return (item.close_date > daysAgo5);
         }
       
+    }),
+
+    computedTotals: Ember.computed.filter('model.totals', function(item){
+
     })
+
+
 });

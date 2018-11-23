@@ -70,7 +70,7 @@ export default Route.extend({
             let revenue = formData.get('price') * formData.get('shares') - formData.get('fees');
             let cost = position.get('purchase_price') * formData.get('shares') + position.get('brokerage_fees'); 
             let profit = revenue - cost;
-            let profitPercentage = profit/revenue;
+            let profitPercentage = profit/cost;
 
             let newClosedPosition = this.store.createRecord('closed-position', {
                 symbol: position.get('symbol').toUpperCase(),
@@ -112,7 +112,6 @@ export default Route.extend({
                         openPosition.save()
                     })
                 }
-
             this.controller.set('price', null);
             this.controller.set('date', null);
             this.controller.set('shares', null);
