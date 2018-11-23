@@ -67,8 +67,8 @@ export default Route.extend({
                 return;
             }
 
-            let revenue = formData.get('price') * formData.get('shares') - formData.get('fees');
-            let cost = position.get('purchase_price') * formData.get('shares') + position.get('brokerage_fees'); 
+            let revenue = Number(formData.get('price')) * Number(formData.get('shares')) - Number(formData.get('fees'));
+            let cost = Number(position.get('purchase_price')) * Number(formData.get('shares')) + Number(position.get('brokerage_fees')); 
             let profit = revenue - cost;
             let profitPercentage = profit/cost;
 
