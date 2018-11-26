@@ -9,6 +9,21 @@ export default Route.extend({
             this.transitionTo('/dashboard/portfolio/gains-losses?range=' + range);
         },
 
+        deleteTransaction(position) {
+            this.store.findRecord('closed-position', position.id).then((transaction) => {
+                transaction.destroyRecord(); 
+            })
+
+            const uid = this.get('session').get('uid');
+            
+            this.store.findRecord('user', uid).then((user) => {
+                user.get('closed_positions').removeObject(position.id);
+                user.save();
+                this.refresh();
+                this.transitionTo('dashboard.portfolio.current-positions');
+            })     
+        },
+
         excelExport(positions){
             
             let data = [
@@ -61,7 +76,11 @@ export default Route.extend({
 
             switch(range) {
                 case 'ALL':
-                    inRangePositions = positions.slice();
+                    inRangePositions = [];
+                    positions.forEach((item) => {
+                            inRangePositions.push(item);
+                    }) 
+                    break;
                 case '1Y':
                     positions.forEach((item) => {
                         if (item.close_date > yearsAgo1){

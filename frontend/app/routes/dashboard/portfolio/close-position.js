@@ -54,7 +54,7 @@ export default Route.extend({
                 alert('You cannot have a negative value for number of shares sold');
                 return;
             }
-            if(formData.get('shares') > position.get('num_of_shares')){
+            if(Number(formData.get('shares')) > Number(position.get('num_of_shares'))){
                 alert('You cannot sell more shares than you own. (' + position.get('num_of_shares') + ')');
                 return;
             }

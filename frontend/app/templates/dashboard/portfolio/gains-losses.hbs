@@ -22,6 +22,7 @@
         <th>Close Fees</th>
         <th>Profit ($)</th>
         <th>Profit(%)</th>
+        <th></th>
   </tr>
     {{#each filteredPositions as |position|}}
     <tr>
@@ -34,6 +35,10 @@
         <td>{{position.close_brokerage_fees}}</td>
         <td>{{is-positive (format-dollar position.profit)}}</td>
         <td>{{is-positive (format-sector position.profit_percentage)}}</td>
+        <td>  <button class="btn custom-button-remove" {{action "deleteTransaction" position }}>
+                {{fa-icon "times"}}
+                {{bs-tooltip title="Delete Transaction"}}
+            </button> </td>
     </tr>
     {{/each}}
     </table>
