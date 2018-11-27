@@ -13,7 +13,8 @@ require('./NodeApp/routes')(app); // configure our routes
 // startup our app at http://localhost:3000
 app.listen(port);
 
-console.log('server running on http://localhost:3000');
+console.log('server running on http://localhost:' + port);
 
 // expose app
 exports = module.exports = app;
+
