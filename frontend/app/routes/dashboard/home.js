@@ -21,10 +21,10 @@ export default Route.extend({
 
     model(params){
         
-        const basicInfoURL = 'http://localhost:3000/api/basicInfo?symbol=' + params.symbol;
-        const gainersURL = 'http://localhost:3000/api/gainers';
-        const losersURL = 'http://localhost:3000/api/losers';
-        const sectorsURL = 'http://localhost:3000/api/sectors';
+        const basicInfoURL = '/api/basicInfo?symbol=' + params.symbol;
+        const gainersURL = '/api/gainers';
+        const losersURL = '/api/losers';
+        const sectorsURL = '/api/sectors';
 
         const basicInfoAPI = $.ajax({
             url: basicInfoURL,

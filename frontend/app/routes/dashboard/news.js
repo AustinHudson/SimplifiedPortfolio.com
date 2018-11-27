@@ -33,8 +33,8 @@ export default Route.extend({
       
     model(params) {    
         
-        const storiesURL = 'http://localhost:3000/api/stories'
-        const personalizedStoriesURL = 'http://localhost:3000/api/getStories?symbol=' + params.symbol;
+        const storiesURL = '/api/stories'
+        const personalizedStoriesURL = '/api/getStories?symbol=' + params.symbol;
        
         const storiesAPI = $.ajax({
             url: storiesURL,

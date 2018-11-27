@@ -123,7 +123,7 @@ export default Route.extend({
 
     model(params) {
         
-        const basicInfoURL = 'http://localhost:3000/api/basicInfo?symbol=' + params.symbol;
+        const basicInfoURL = '/api/basicInfo?symbol=' + params.symbol;
 
         const basicInfoAPI = $.ajax({
             url: basicInfoURL,

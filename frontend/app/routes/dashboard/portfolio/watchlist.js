@@ -26,7 +26,7 @@ export default Route.extend({
 
                 let watchlistStocks = user.get('followed_stocks');
                 let types = 'quote';
-                const watchlistInfoURL = 'http://localhost:3000/api/getBatchInfo?symbols=' + watchlistStocks + '&types=' + types;
+                const watchlistInfoURL = '/api/getBatchInfo?symbols=' + watchlistStocks + '&types=' + types;
         
                 return $.ajax({
                     url: watchlistInfoURL,

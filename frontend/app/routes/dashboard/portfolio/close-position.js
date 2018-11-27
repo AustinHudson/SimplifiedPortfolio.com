@@ -126,7 +126,7 @@ export default Route.extend({
 
         if (params.position) {
 
-            const basicInfoURL = 'http://localhost:3000/api/basicInfo?symbol=' + params.symbol;
+            const basicInfoURL = '/api/basicInfo?symbol=' + params.symbol;
 
             return RSVP.hash({
                 positionList: this.store.findRecord('user', this.get('session').get('uid')).then((user) => {

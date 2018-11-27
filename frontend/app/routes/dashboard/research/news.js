@@ -8,8 +8,8 @@ export default Route.extend({
 
         let { symbol } = this.paramsFor('dashboard.research');
 
-        const newsStoriesURL = 'http://localhost:3000/api/getStories?symbol=' + symbol;
-        const basicInfoURL = 'http://localhost:3000/api/basicInfo?symbol=' + symbol;
+        const newsStoriesURL = '/api/getStories?symbol=' + symbol;
+        const basicInfoURL = '/api/basicInfo?symbol=' + symbol;
 
         const newsStoriesAPI = $.ajax({
             url: newsStoriesURL,

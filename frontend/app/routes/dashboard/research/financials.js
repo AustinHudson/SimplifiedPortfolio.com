@@ -6,8 +6,8 @@ export default Route.extend({
 
     model() {
         let { symbol } = this.paramsFor('dashboard.research');
-        const quarterlyURL = 'http://localhost:3000/api/quarterly_financials?symbol=' + symbol;
-        const basicInfoURL = 'http://localhost:3000/api/basicInfo?symbol=' + symbol;
+        const quarterlyURL = '/api/quarterly_financials?symbol=' + symbol;
+        const basicInfoURL = '/api/basicInfo?symbol=' + symbol;
 
         const quarterlyAPI = $.ajax({
             url: quarterlyURL,

@@ -8,9 +8,9 @@ export default Route.extend({
         let { symbol } = this.paramsFor('dashboard.research');
         console.log(symbol);
 
-        const logoURL = 'http://localhost:3000/api/logo?symbol=' + symbol;
-        const companyInfoURL = 'http://localhost:3000/api/company?symbol=' + symbol;
-        const peersURL = 'http://localhost:3000/api/peers?symbol=' + symbol;
+        const logoURL = '/api/logo?symbol=' + symbol;
+        const companyInfoURL = '/api/company?symbol=' + symbol;
+        const peersURL = '/api/peers?symbol=' + symbol;
 
         const logoAPI = $.ajax({
             url: logoURL,

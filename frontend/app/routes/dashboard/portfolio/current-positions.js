@@ -49,7 +49,7 @@ export default Route.extend({
                      })
                      return positionSymbolsArray;
                 }).then((symbols) => {
-                    const watchlistInfoURL = 'http://localhost:3000/api/getBatchInfo?symbols=' + symbols + '&types=quote';
+                    const watchlistInfoURL = '/api/getBatchInfo?symbols=' + symbols + '&types=quote';
                  
                     return $.ajax({
                         url: watchlistInfoURL,
