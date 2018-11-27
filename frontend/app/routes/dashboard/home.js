@@ -21,7 +21,7 @@ export default Route.extend({
 
     model(params){
         
-        const basicInfoURL = 'http://localhost:/api/basicInfo?symbol=' + params.symbol;
+        const basicInfoURL = 'http://localhost:3000/api/basicInfo?symbol=' + params.symbol;
         const gainersURL = 'http://localhost:3000/api/gainers';
         const losersURL = 'http://localhost:3000/api/losers';
         const sectorsURL = 'http://localhost:3000/api/sectors';
