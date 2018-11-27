@@ -21,12 +21,13 @@ export default Route.extend({
 
     model(params){
 
-        let port = process.env.PORT;
-        console.log(port);
-        const basicInfoURL = 'http://localhost:/api/basicInfo?symbol=' + params.symbol;
-        const gainersURL = 'http://localhost:3000/api/gainers';
-        const losersURL = 'http://localhost:3000/api/losers';
-        const sectorsURL = 'http://localhost:3000/api/sectors';
+        let port = process.env.port || 3000;
+    
+        alert('the port is' + port);
+        const basicInfoURL = 'http://localhost:' + port + '/api/basicInfo?symbol=' + params.symbol;
+        const gainersURL = 'http://localhost:' + port + '/api/gainers';
+        const losersURL = 'http://localhost:' + port + '/api/losers';
+        const sectorsURL = 'http://localhost:' + port + '/api/sectors';
 
         const basicInfoAPI = $.ajax({
             url: basicInfoURL,
