@@ -1,6 +1,11 @@
 .page-header {
-    margin-top: 50px;
-}
+    padding-top: 5%;
+    
+    }
+
+.tagline {
+        color: #202020;
+    } 
 
 .list-group{
     margin-top: 45px;
@@ -34,7 +39,7 @@
     flex: auto;
     margin: 0.3em;
     text-align: center;
-    color: $darkerGreen;
+    color: #202020;
     font-size: 1.5em;
     text-decoration: none;
   }
