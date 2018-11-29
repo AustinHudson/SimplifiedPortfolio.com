@@ -7,12 +7,17 @@
     <div class="research-form-item">
         <form class="form-inline research-search-form">  
              <div class="form-group">
-                 {{input type="text" class="form-control quick-search-input" value=stockSymbol placeholder="Enter Stock Symbol"}}
-            <button
-                class='btn custom-button quick-search-btn'
-                {{action 'researchSymbol' stockSymbol}}
-            >Search
-            </button>
+                 <div>
+                    {{input type="text" class="form-control quick-search-input" value=stockSymbol placeholder="Enter Stock Symbol"}}
+                 </div>
+                 <div>
+                    <button
+                        class='btn custom-button quick-search-btn header-search'
+                        {{action 'researchSymbol' stockSymbol}}
+                        >Search
+                    </button>
+                 </div>
+            
             </div>
         </form>
     </div>

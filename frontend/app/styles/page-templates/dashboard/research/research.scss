@@ -1,70 +1,102 @@
 .research-search {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
-    
+    margin-left: 245px;
+    min-height: 116px;
+    background: rgba(11, 12, 16, 0.35);
+    border-bottom: 2px solid $mainFont;
+    margin-bottom: 2%;
 }
 .research-search-form {
     padding: 25px 0 25px 7px;
 }
 .research-date {
-    flex-basis: 50%;
+    align-self: center;
+    flex-basis: 70%;
+    text-align: center;
+    
 }
-
-
 .research-form-item {
     flex-basis: 30%;
-    margin-right: 5%;
+    display: flex;
 }
-
 .research-tabs {
     margin-left: 275px;
     margin-right: 25px;
 }
-
-@media only screen and (max-width: 900px) {
-    .research-tabs {
-        margin-left: 75px;
-        margin-right: 10px;
-    }
-    .research-form-item {
-        margin-left: 70px;
-        flex-basis: 90%;
-    }
-    .research-date {
-        flex-basis: 90%;
-    }
-    .research-search-form {
-        padding: 0 0 25px 7px;
-    }
+.nav-tabs {  
+    border-bottom: 1px solid $darkerGreen; 
 }
-
-.nav-tabs {
-    
-    border-bottom: 1px solid $darkerGreen;
-    
-}
-
 .nav-link {
     background-color: transparent;
-   
 }
-
 .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
     color: white;
     background-color: $dashboardBlack;
     border: 1px solid $darkerGreen;
     border-bottom: 1px solid $dashboardBlack;
 }
-
 .nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
     border: 1px solid $darkerGreen;
     border-bottom: 1px solid $dashboardBlack;
 }
-
 .dashboard-research-content {
     background-color: $dashboardBlack;
     border: 1px solid $darkerGreen;
     border-top: transparent;
     min-height: 700px;
+}
+@media only screen and (max-width: 1500px) {
+    .research-date {
+        flex-basis: 60%;
+        h1{
+            font-size: 1.75em;
+            margin-top: 2%;
+        }  
+    }
+    .research-search-form{
+        margin: 0 0 2% 0;
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .research-search {
+        margin-bottom: 5%;
+    }
+    .research-date {
+        flex-basis: 90%;
+    }
+    .research-form-item{
+        flex-basis: 90%;
+        justify-content: center;
+    }
+    .display-date {
+        padding: 0;
+        text-align: center;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .research-tabs {
+        margin-left: 75px;
+        margin-right: 10px;
+    }
+    .research-search {
+        margin-left: 68px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .research-search {
+        margin-bottom: 10%;
+    }
+    .research-date{
+        h1{
+            font-size: 1.25em;
+        }
+    }
+    .header-search {
+        margin-top: 5%;
+        margin-left: 30% !important;
+    }
 }

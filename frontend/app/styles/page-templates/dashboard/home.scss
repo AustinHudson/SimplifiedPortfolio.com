@@ -6,9 +6,8 @@
 
 .display-date {
     text-align: left;
-    margin: 13px 0 25px 285px;
-    color: white;
-    
+    padding-left: 30px;
+    color: white;  
 }
 
 .is-positive {
@@ -57,11 +56,11 @@ body {
         align-items: center;
     }
 }
+
 @media only screen and (max-width: 900px) {
-    .display-date{
-        margin-left: 80px;
-        font-size: 1.75em;
-    }
+    // .display-date{
+    //     font-size: 1.75em;
+    // }
     .dashboard-home-container {
         margin-left: 80px;
     }

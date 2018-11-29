@@ -14,10 +14,10 @@ body {
     .form-div{
       
       border: 3px solid white;
-      width: 750px;
+      width: 30%;
       background-color: rgba(31, 40, 51, 0.4);
-      margin-top: 135px;
-      padding-bottom: 35px;
+      margin-top: 5%;
+      padding-bottom: 5%;
       margin-left: auto;
       margin-right: auto;
       border-radius: 15px 50px;
@@ -29,7 +29,7 @@ body {
 
     .sign-up-in-form {
         color: $mainFont;
-        width: 50%;
+        width: 70%;
         margin: 0 auto;
       
         .form-group .form-control:focus {
@@ -67,6 +67,30 @@ body {
         }
 
     }
+
+    @media only screen and (max-width: 1800px){
+      .form-div{
+        width: 40%;
+      }
+    }
+    @media only screen and (max-width: 1200px){
+      .form-div{
+        width: 50%;
+      }
+    }
+    @media only screen and (max-width: 800px){
+      .form-div{
+        width: 70%;
+      }
+    }
+    @media only screen and (max-width: 600px){
+      .form-div{
+        width: 90%;
+      }
+      .sign-up-in-form {
+        width: 90%;
+      }
+    }
   }
   .custom-button{
     border-color: $brightGreen;
@@ -78,5 +102,7 @@ body {
       box-shadow: 0 0 10px 0 $brightGreen inset, 0 0 10px 4px $brightGreen;
     }
   }
+
+
 
 
