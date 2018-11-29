@@ -41,6 +41,7 @@ body {
     background-color: $dashboardBlack;
     border-radius: 0.75rem;
 }
+
 @media only screen and (max-width: 1500px) {
     .gainers-component, .losers-component {
         flex-basis: 80%;
