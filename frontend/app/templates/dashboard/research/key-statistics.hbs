@@ -28,11 +28,15 @@
                          {{section-pairing title="Change %" info=(is-positive (format-percentage model.basicInfo.changePercent))}}
                     </div>
                 </div>
+                {{bs-tooltip title="The daily price change is the change in the price of a stock or security from the previous
+                 trading day's close to the current price or current day's close."}}
             </div>
             <div class="column-section week-range">
                 {{section-pairing title="52 Week High" info=model.keyStatistics.week52high}}
                 {{section-pairing title="52 Week Low" info=model.keyStatistics.week52low}}
                 {{section-pairing title="52 Week Change" info=(is-positive (format-percentage model.keyStatistics.week52change))}}
+                {{bs-tooltip title="The 52-week range shows the lowest and highest price at which a stock has traded at in the previous 
+                52 weeks.Companies that have traded for less than a year still show a 52-week range, even though there isn't data for the full range."}}
             </div>
             <div class="column-section">
                 <span class="dividend-rate">
@@ -58,25 +62,56 @@
                 {{section-pairing title="Latest EPS Date" info=(moment-format model.keyStatistics.latestEPSDate 'MMMM Do YYYY')}}
                 {{section-pairing title="Consensus EPS" info=(is-positive model.keyStatistics.consensusEPS)}}
                 {{section-pairing title="EPS Surprise" info=(is-positive (format-percentage model.keyStatistics.EPSSurprisePercent))}}
+                {{bs-tooltip title="Earnings per share (EPS) is the portion of a company's profit allocated to each share of common stock. Earnings per share serves as an indicator of a company's profitability."}}
             </div>
             <div class="column-section">
-                {{section-pairing title="Revenue per Share" info=model.keyStatistics.revenuePerShare}}
-                {{section-pairing title="Revenue per Employee" info=(format-financials model.keyStatistics.revenuePerEmployee)}}
-                {{section-pairing title="EBITDA" info=(format-financials model.keyStatistics.EBITDA)}}
+                <span>
+                    {{section-pairing title="Revenue per Share" info=model.keyStatistics.revenuePerShare}}
+                    {{bs-tooltip title="Revenue per share is a ratio that computes the total revenue earned per share over a designated period. It is calculated by dividing total revenue by average shares outstanding.
+                    The sales-per-share ratio is useful as a quick glance at a company's business activity strength."}}
+                </span>
+                <span>
+                    {{section-pairing title="Revenue per Employee" info=(format-financials model.keyStatistics.revenuePerEmployee)}}
+                    {{bs-tooltip title="Revenue per employee is a ratio that is calculated as a company's total revenue divided by its current number of employees. It is a rough measure of how much money each employee 
+                    generates for the firm. This ratio is most useful when comparing it against other companies in the same industry, or looking at changes in a company's own figure over time. Ideally, a company wants 
+                    the highest revenue per employee possible, because it indicates higher productivity and effective use of the firm’s resources."}}
+                </span>
+                <span>
+                    {{section-pairing title="EBITDA" info=(format-financials model.keyStatistics.EBITDA)}}
+                    {{bs-tooltip title="EBITDA stands for earnings before interest, taxes, depreciation and amortization. EBITDA is a measure of a company's financial performance and is used as an alternative to earnings
+                     or net income in some circumstances. EBITDA can be misleading because it strips out the cost of capital investments like property, plants and equipment. This metric also excludes expenses associated 
+                     with debt by adding back interest expense and taxes to earnings."}}
+                </span>
             </div>
             <div class="column-section">
                 {{section-pairing title="P/E Ratio High" info=model.keyStatistics.peRatioHigh}}
                 {{section-pairing title="P/E Ratio Low" info=model.keyStatistics.peRatioLow}}
+                {{bs-tooltip title="The price-earnings ratio (P/E ratio) is the ratio for valuing a company that measures its current share price relative to its per-share earnings.
+                 The P/E ratio can be calculated as: Market Value per Share / Earnings per Share. In essence, the price-earnings ratio indicates the dollar amount an investor can expect to invest in a company in order to 
+                 receive one dollar of that company’s earnings. "}}
             </div>
         </div>
         <div class="key-stats-column">
             <div class="column-section">
-                {{section-pairing title="Return on Equity" info=(format-percentage model.keyStatistics.returnOnEquity)}}
-                {{section-pairing title="Return on Assets" info=(format-percentage model.keyStatistics.returnOnAssets)}}
+                <span>
+                    {{section-pairing title="Return on Equity" info=(format-percentage model.keyStatistics.returnOnEquity)}}
+                    {{bs-tooltip title="Return on equity (ROE) is a measure of financial performance calculated by dividing net income by shareholders' equity. Because shareholders' equity is equal to a company’s assets minus its debt, 
+                    ROE could be thought of as the return on net assets. ROE is expressed as a percentage and can be calculated for any company if net income and equity are both positive numbers.Relatively high or low ROE ratios will vary 
+                    significantly from one industry group or sector to another. When used to evaluate one company to another similar company the comparison will be more meaningful."}}
+                </span>
+                <span>
+                    {{section-pairing title="Return on Assets" info=(format-percentage model.keyStatistics.returnOnAssets)}}
+                    {{bs-tooltip title="Return on assets (ROA) is an indicator of how profitable a company is relative to its total assets. ROA gives a manager, investor, or analyst an idea as to how efficient a company's management is at using its assets to generate earnings. 
+                    Return on assets is displayed as a percentage and its calculated as:
+                    ROA = Net Income / Total Assets"}}    
+                </span>
             </div>
             <div class="column-section">
                 {{section-pairing title="200 day Moving Average" info=(format-dollar model.keyStatistics.day200MovingAvg)}}
                 {{section-pairing title="50 day Moving Average" info=(format-dollar model.keyStatistics.day50MovingAvg)}}
+                {{bs-tooltip title="A moving average (MA) is a widely used indicator in technical analysis that helps smooth out price action by filtering out the “noise” from random price fluctuations. It is a trend-following, or lagging, indicator because it is based on past prices.
+                The most common applications of moving averages are to identify the trend direction, and to determine support and resistance levels. The 50-day and 200-day MAs are widely followed by investors and traders, with breaks above and below this moving average considered to be 
+                important trading signals."}}
             </div>
             <div class="column-section">
                 Price Change Over Time

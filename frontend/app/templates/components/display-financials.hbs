@@ -7,55 +7,83 @@
         {{/each}}
   </tr>
   <tr>
-    <td class="row-title">Gross Profit</td>
+    <td class="row-title">Gross Profit
+            {{bs-tooltip title="Gross profit is the profit a company makes after deducting the costs associated with making and selling its products, or the costs associated with providing its services. Gross profit will appear on a company's income statement, and can be calculated with this formula:
+            Gross profit = Revenue - Cost of Goods Sold 
+            Gross profit is also called sales profit and gross income."}}
+    </td>
      {{#each earnings as |report|}}
         <td>{{format-financials report.grossProfit}}</td>
         {{/each}}
   </tr>
    <tr>
-    <td class="row-title">Total Revenue</td>
+    <td class="row-title">Total Revenue
+      {{bs-tooltip title="Revenue is the amount of money that a company actually receives during a specific period, including discounts and deductions for returned merchandise. It is the top line or gross income figure from which costs are subtracted to determine net income.
+      Revenue is calculated by multiplying the price at which goods or services are sold by the number of units or amount sold."}}
+    </td>
      {{#each earnings as |report|}}
         <td>{{format-financials report.totalRevenue}}</td>
         {{/each}}
   </tr>
    <tr>
-    <td class="row-title">Net Income</td>
+    <td class="row-title">Net Income
+      {{bs-tooltip title="Net income is equal to net earnings (profit) calculated as sales less cost of goods sold, selling, general and administrative expenses, operating expenses, depreciation, interest, taxes and other expenses. This number appears on a company's 
+      income statement and is an important measure of how profitable the company is."}}
+    </td>
      {{#each earnings as |report|}}
         <td>{{format-financials report.netIncome}}</td>
         {{/each}}
   </tr>
    <tr>
-    <td class="row-title">R&D</td>
+    <td class="row-title">R&D
+          {{bs-tooltip title="Research and development (R&D) refers to the work a business conducts for the innovation, introduction and improvement of its products and procedures. It is a series of investigative activities to improve existing products and procedures
+           or to lead to the development of new products and procedures."}}
+    </td>
      {{#each earnings as |report|}}
         <td>{{format-financials report.researchAndDevelopment}}</td>
         {{/each}}
   </tr>
   <tr>
-    <td class="row-title">Operating Expense</td>
+    <td class="row-title">Operating Expense
+          {{bs-tooltip title="An operating expense is an expense a business incurs through its normal business operations. Often abbreviated as OPEX, operating expenses include rent, equipment, inventory costs, marketing, payroll, insurance, and funds allocated for research 
+          and development. One of the typical responsibilities that management must contend with is determining how to reduce operating expenses without significantly affecting a firm's ability to compete with its competitors."}}
+    </td>
      {{#each earnings as |report|}}
         <td>{{format-financials report.operatingExpense}}</td>
         {{/each}}
   </tr>
   <tr>
-    <td class="row-title">Total Assets</td>
+    <td class="row-title">Total Assets
+          {{bs-tooltip title="An asset is a resource with economic value that an individual, corporation or country owns or controls with the expectation that it will provide a future benefit. Assets are reported on a company's balance sheet and are bought or created to increase 
+          a firm's value or benefit the firm's operations. An asset can be thought of as something that, in the future, can generate cash flow, reduce expenses or improve sales, regardless of whether it's manufacturing equipment or a patent. "}}
+    </td>
      {{#each earnings as |report|}}
         <td>{{format-financials report.totalAssets}}</td>
         {{/each}}
   </tr>
   <tr>
-    <td class="row-title">Total Cash</td>
+    <td class="row-title">Total Cash
+          {{bs-tooltip title="Cash is legal tender -- currency or coins -- that can be used to exchange goods, debt or services. Sometimes it also includes the value of assets that can be easily converted into cash immediately, as reported by a company. In finance and banking, 
+          cash indicates the company's current assets, or any assets that can be turned into cash within one year."}}
+    </td>
      {{#each earnings as |report|}}
         <td>{{format-financials report.totalCash}}</td>
         {{/each}}
   </tr>
   <tr>
-    <td class="row-title">Total Debt</td>
+    <td class="row-title">Total Debt
+          {{bs-tooltip title="Debt is an amount of money borrowed by one party from another. Debt is used by many corporations and individuals as a method of making large purchases that they could not afford under normal circumstances. In corporate finance, there is a lot of attention
+           paid to the amount of debt a company has. A company that has a large amount of debt may not be able to make its interest payments if sales drop, putting the business in danger of bankruptcy. Conversely, a company that uses no debt may be missing out on important expansion opportunities."}}
+    </td>
      {{#each earnings as |report|}}
         <td>{{format-financials report.totalDebt}}</td>
      {{/each}}
   </tr>
   <tr>
-    <td class="row-title">Shareholder Equity</td>
+    <td class="row-title">Shareholder Equity
+          {{bs-tooltip title="Shareholders' equity, also referred to as the owner's residual claim after debts have been paid, is equal to a firm's total assets minus its total liabilities.  Found on a company's balance sheet, it is one of the most common financial metrics employed by analysts to assess
+           the financial health of a company. Shareholders' equity represents the net or book value of a company."}}
+    </td>
      {{#each earnings as |report|}}
         <td>{{format-financials report.shareholderEquity}}</td>
         {{/each}}

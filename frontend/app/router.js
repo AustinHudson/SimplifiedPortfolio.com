@@ -14,6 +14,7 @@ Router.map(function() {
   this.authenticatedRoute('dashboard', function() {
     this.route('home');
     this.route('news');
+    this.route('about');
     this.route('research', function() {
       this.route('profile');
       this.route('chart');

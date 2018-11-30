@@ -8,6 +8,12 @@
             <h3>{{model.basicInfo.symbol}}</h3>
         </div>
     </div>
+    <div class="fa-pulse">
+        <span>
+            {{fa-icon "question-circle"}}
+            {{bs-tooltip title="Hover over the row titles to get information about each financial metric."}}
+        </span>
+    </div>
     {{display-financials earnings=model.quarterlyInfo.financials}}
    <div class="profile-footer add-options">
         <div class="peers-item footer-option-L">

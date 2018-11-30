@@ -27,6 +27,11 @@
                  <span class="side-nav-name">Research</span>{{/link-to}}
             </li>
             <li>
+                {{#link-to "dashboard.about"}}
+                 <span class="side-nav-icon">{{fa-icon "info-circle"}}{{bs-tooltip title="About"}}</span> 
+                 <span class="side-nav-name">About</span>{{/link-to}}
+            </li>
+            <li>
                 <span onclick={{action 'signOut'}}>
                     <a href="#">
                          <span class="side-nav-icon">{{fa-icon "sign-out"}}{{bs-tooltip title="Sign Out"}}</span>
