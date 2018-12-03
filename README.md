@@ -2,6 +2,10 @@
 
 A fully responsive single page web application, which provides a simplified way to track your stock portfolio
 
+## URL
+
+http://www.simplifiedportfolio.com/
+
 ## Technologies Used 
 
 ### Node.js
